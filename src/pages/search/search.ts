@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { VenueService } from '../../services/venue.services';
+import { Venue } from '../../models/venue';
 
 /**
  * Generated class for the SearchPage page.
@@ -15,10 +17,13 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class SearchPage {
 
+  public venues:Array<Venue>;
   shouldHide: boolean;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, venueService:VenueService) {
+    this.venues = venueService.getAllVenues();
   }
+
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad SearchPage');
@@ -31,3 +36,5 @@ export class SearchPage {
 
 
 }
+
+
