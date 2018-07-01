@@ -6,7 +6,6 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import { OpenPage } from '../pages/open/open';
 import { VenueService } from '../services/venue.services';
 import { SearchPage } from '../pages/search/search';
 import { ItineraryPage } from '../pages/itinerary/itinerary';
@@ -17,7 +16,6 @@ import { ProfilePage } from '../pages/profile/profile';
 @NgModule({
   declarations: [
     MyApp,
-    OpenPage,
     HomePage,
     SearchPage,
     ItineraryPage,
@@ -32,7 +30,6 @@ import { ProfilePage } from '../pages/profile/profile';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    OpenPage,
     HomePage,
     SearchPage,
     ItineraryPage,
