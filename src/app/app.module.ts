@@ -22,7 +22,8 @@ import { FavoritesPage } from '../pages/favorites/favorites';
     ItineraryPage,
     TabsPage,
     SplashPage,
-    ProfilePage
+    ProfilePage,
+    FavoritesPage
   ],
   imports: [
     BrowserModule,
@@ -36,7 +37,8 @@ import { FavoritesPage } from '../pages/favorites/favorites';
     ItineraryPage,
     TabsPage,
     SplashPage,
-    ProfilePage
+    ProfilePage,
+    FavoritesPage
   ],
   providers: [
     StatusBar,

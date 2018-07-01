@@ -18,10 +18,27 @@ import { Venue } from '../../models/venue';
 export class SearchPage {
 
   public venues:Array<Venue>;
-  shouldHide: boolean = true;
+  shouldHideR: boolean = true;
+  shouldHideM: boolean = true;
+  shouldHideT: boolean = true;
+  findRestaurants: string;
+  locationR: string;
+  findMovies: string;
+  locationM: string;
+  findTransport: string;
+  locationTFrom: string;
+  locationTTo: string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, venueService:VenueService) {
     this.venues = venueService.getAllVenues();
+    this.findRestaurants = "";
+    this.locationR = "";
+    this.findMovies = "";
+    this.locationR = "";
+    this.findTransport= "";
+    this.locationTFrom = "";
+    this.locationTTo = "";
+    
   }
 
 
@@ -29,8 +46,32 @@ export class SearchPage {
     console.log('ionViewDidLoad SearchPage');
   }
 
-  reveal(){
-    this.shouldHide = !this.shouldHide;
+  revealR(){
+    this.shouldHideR = !this.shouldHideR;
+  }
+
+  revealM(){
+    this.shouldHideM = !this.shouldHideM;
+  }
+
+  revealT(){
+    this.shouldHideT = !this.shouldHideT;
+  }
+
+  bookR(){
+    console.log(this.findRestaurants);
+    console.log(this.locationR);
+  }
+
+  bookM(){
+    console.log(this.findMovies);
+    console.log(this.locationM);
+  }
+
+  bookT(){
+    console.log(this.findTransport);
+    console.log(this.locationTFrom);
+    console.log(this.locationTTo);
   }
 
 

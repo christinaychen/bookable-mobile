@@ -17,34 +17,66 @@
   I'm Looking to Book:
   <ion-list>
     <ion-item>
-      <button ion-button (click)="reveal()">Restaurants</button>
+      <button ion-button (click)="revealR()">Restaurants</button>
     </ion-item>
-    <ion-list [hidden]="shouldHide">
+    <ion-list [hidden]="shouldHideR">
+      <ion-item>
+        <ion-label fixed>Find Tables:</ion-label>
+        <ion-input type="text" [(ngModel)]="findRestaurants"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label fixed>Around:</ion-label>
+        <ion-input type="text" [(ngModel)]="locationR"></ion-input>
+      </ion-item>
+      <ion-item>
+        <button ion-button (click)="bookR()">Book!</button>
+      </ion-item>
+    </ion-list>
+    <ion-item>
+      <button ion-button (click)="revealM()">Movies</button>
+    </ion-item>
+    <ion-list [hidden]="shouldHideM">
+      <ion-item>
+        <ion-label fixed>Find Seats:</ion-label>
+        <ion-input type="text" [(ngModel)]="findMovies"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label fixed>Around:</ion-label>
+        <ion-input type="text" [(ngModel)]="locationM"></ion-input>
+      </ion-item>
+      <ion-item>
+        <button ion-button (click)="bookM()">Book!</button>
+      </ion-item>
+    </ion-list>
+    <ion-item>
+      <button ion-button (click)="revealT()">Transportation</button>
+    </ion-item>
+    <ion-list [hidden]="shouldHideT">
         <ion-item>
-          Card Header
+          <ion-label fixed>Find Journeys:</ion-label>
+          <ion-input type="text" [(ngModel)]="findTransport"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label fixed>From:</ion-label>
+          <ion-input type="text" [(ngModel)]="locationTFrom"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label fixed>To:</ion-label>
+            <ion-input type="text" [(ngModel)]="locationTTo"></ion-input>
+          </ion-item>
+        <ion-item>
+          <button ion-button (click)="bookT()">Book!</button>
         </ion-item>
       </ion-list>
-    <ion-item>
-      <button ion-button>Movies</button>
-    </ion-item>
-    <ion-item>
-      <button ion-button>Transportation</button>
-    </ion-item>
   </ion-list>
-  Search to find a venue:               
-  <ion-searchbar
-  [(ngModel)]="myInput"
-  [showCancelButton]="shouldShowCancel"
-  (ionInput)="onInput($event)"
-  (ionCancel)="onCancel($event)">
+  Already know what you're Look for? Fast Search Here:
+  <ion-searchbar [(ngModel)]="myInput" [showCancelButton]="shouldShowCancel" (ionInput)="onInput($event)" (ionCancel)="onCancel($event)">
   </ion-searchbar>
 
   <ion-list>
-      <ion-item *ngFor="let venue of venues">
-        {{ venue.name }}
-      </ion-item>
+    <ion-item *ngFor="let venue of venues">
+      {{ venue.name }}
+    </ion-item>
 
-    </ion-list>
+  </ion-list>
 </ion-content>
-
-
