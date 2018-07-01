@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HomePage } from '../home/home';
 import { SearchPage } from '../search/search';
 import { ItineraryPage } from '../itinerary/itinerary';
+import { ProfilePage } from '../profile/profile';
 
 /**
  * Generated class for the TabsPage page.
@@ -21,6 +22,7 @@ export class TabsPage {
   tab1Root = HomePage;
   tab2Root = SearchPage;
   tab3Root = ItineraryPage;
+  tab4Root = ProfilePage;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }

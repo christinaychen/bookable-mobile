@@ -12,6 +12,7 @@ import { SearchPage } from '../pages/search/search';
 import { ItineraryPage } from '../pages/itinerary/itinerary';
 import { TabsPage } from '../pages/tabs/tabs';
 import { SplashPage } from '../pages/splash/splash';
+import { ProfilePage } from '../pages/profile/profile';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { SplashPage } from '../pages/splash/splash';
     SearchPage,
     ItineraryPage,
     TabsPage,
-    SplashPage
+    SplashPage,
+    ProfilePage
   ],
   imports: [
     BrowserModule,
@@ -35,7 +37,8 @@ import { SplashPage } from '../pages/splash/splash';
     SearchPage,
     ItineraryPage,
     TabsPage,
-    SplashPage
+    SplashPage,
+    ProfilePage
   ],
   providers: [
     StatusBar,
