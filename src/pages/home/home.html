@@ -6,14 +6,19 @@
 -->
 <ion-header >
 
-  <ion-navbar hideBackButton color="primary">
-    <ion-title align = "center" style="font-family:'Courier New', Courier, monospace" ><b>Bookable</b></ion-title>
+  <ion-navbar hideBackButton color="primary" class="navigation">
+    <!-- <ion-title align = "center" style="font-family:'Courier New', Courier, monospace" > -->
+    <ion-title>
+        <ion-icon name="navigate"></ion-icon>
+        <b>Your location: 32 Camps Bay Dr</b>
+    </ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content>
+  <h2><b>Near you:</b></h2>
   <div>
     <ion-slides autoplay="3000" loop="true" speed="500" pager="false">
         <ion-slide>
@@ -37,6 +42,31 @@
             </h1>
           </ion-slide>
       </ion-slides>
+    </div>
+
+    <div>
+        <h2><b>Popular:</b></h2>
+      <ion-list>
+        <h1 class="label">
+          <button style="background-color:white"> <img src="https://images.pexels.com/photos/70497/pexels-photo-70497.jpeg?cs=srgb&dl=food-dinner-lunch-70497.jpg&fm=jpg"></button>
+          <ion-item><b>Food</b><p>Tag, Tag</p></ion-item>
+        </h1>
+        <h1 class="label">
+            <button style="background-color:white"> <img src="https://images.pexels.com/photos/70497/pexels-photo-70497.jpeg?cs=srgb&dl=food-dinner-lunch-70497.jpg&fm=jpg"></button>
+            <ion-item><b>Food</b><p>Tag, Tag</p></ion-item>
+          </h1>
+          <h1 class="label">
+              <button style="background-color:white"> <img src="https://images.pexels.com/photos/70497/pexels-photo-70497.jpeg?cs=srgb&dl=food-dinner-lunch-70497.jpg&fm=jpg"></button>
+              <ion-item><b>Food</b><p>Tag, Tag</p></ion-item>
+            </h1>
+            <h1 class="label">
+                <button style="background-color:white"> <img src="https://images.pexels.com/photos/70497/pexels-photo-70497.jpeg?cs=srgb&dl=food-dinner-lunch-70497.jpg&fm=jpg"></button>
+                <ion-item><b>Food</b><p>Tag, Tag</p></ion-item>
+              </h1>
+      </ion-list>
+
+
+
     </div>
 
 </ion-content>
