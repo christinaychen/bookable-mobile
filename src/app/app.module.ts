@@ -12,6 +12,7 @@ import { ItineraryPage } from '../pages/itinerary/itinerary';
 import { TabsPage } from '../pages/tabs/tabs';
 import { SplashPage } from '../pages/splash/splash';
 import { ProfilePage } from '../pages/profile/profile';
+import { FavoritesPage } from '../pages/favorites/favorites';
 
 @NgModule({
   declarations: [

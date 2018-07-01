@@ -18,6 +18,7 @@ import { Venue } from '../../models/venue';
 export class SearchPage {
 
   public venues:Array<Venue>;
+  shouldHide: boolean = true;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, venueService:VenueService) {
     this.venues = venueService.getAllVenues();
@@ -27,6 +28,12 @@ export class SearchPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad SearchPage');
   }
+
+  reveal(){
+    this.shouldHide = !this.shouldHide;
+  }
+
+
 
 }
 
