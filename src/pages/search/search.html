@@ -31,21 +31,20 @@
       <button ion-button>Transportation</button>
     </ion-item>
   </ion-list>
+  Search to find a venue:               
+  <ion-searchbar
+  [(ngModel)]="myInput"
+  [showCancelButton]="shouldShowCancel"
+  (ionInput)="onInput($event)"
+  (ionCancel)="onCancel($event)">
+  </ion-searchbar>
+
+  <ion-list>
+      <ion-item *ngFor="let venue of venues">
+        {{ venue.name }}
+      </ion-item>
+
+    </ion-list>
 </ion-content>
 
-        Search to find a venue:               
-        <ion-searchbar
-        [(ngModel)]="myInput"
-        [showCancelButton]="shouldShowCancel"
-        (ionInput)="onInput($event)"
-        (ionCancel)="onCancel($event)">
-        </ion-searchbar>
-    
-        <ion-list>
-            <ion-item *ngFor="let venue of venues">
-              {{ venue.name }}
-            </ion-item>
-      
-          </ion-list>
 
-</ion-content>
