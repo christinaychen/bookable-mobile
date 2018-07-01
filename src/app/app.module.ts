@@ -11,6 +11,7 @@ import { VenueService } from '../services/venue.services';
 import { SearchPage } from '../pages/search/search';
 import { ItineraryPage } from '../pages/itinerary/itinerary';
 import { TabsPage } from '../pages/tabs/tabs';
+import { ProfilePage } from '../pages/profile/profile';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { TabsPage } from '../pages/tabs/tabs';
     HomePage,
     SearchPage,
     ItineraryPage,
-    TabsPage
+    TabsPage,
+    ProfilePage
   ],
   imports: [
     BrowserModule,
@@ -32,7 +34,8 @@ import { TabsPage } from '../pages/tabs/tabs';
     HomePage,
     SearchPage,
     ItineraryPage,
-    TabsPage
+    TabsPage,
+    ProfilePage
   ],
   providers: [
     StatusBar,
