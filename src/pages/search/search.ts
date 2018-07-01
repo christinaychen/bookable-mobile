@@ -15,11 +15,19 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class SearchPage {
 
+  shouldHide: boolean;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad SearchPage');
   }
+
+  reveal(){
+    this.shouldHide = !this.shouldHide;
+  }
+
+
 
 }

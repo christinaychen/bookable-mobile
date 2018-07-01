@@ -12,6 +12,7 @@ import { SearchPage } from '../pages/search/search';
 import { ItineraryPage } from '../pages/itinerary/itinerary';
 import { TabsPage } from '../pages/tabs/tabs';
 import { ProfilePage } from '../pages/profile/profile';
+import { FavoritesPage } from '../pages/favorites/favorites';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ProfilePage } from '../pages/profile/profile';
     SearchPage,
     ItineraryPage,
     TabsPage,
-    ProfilePage
+    ProfilePage,
+    FavoritesPage
   ],
   imports: [
     BrowserModule,
@@ -35,7 +37,8 @@ import { ProfilePage } from '../pages/profile/profile';
     SearchPage,
     ItineraryPage,
     TabsPage,
-    ProfilePage
+    ProfilePage,
+    FavoritesPage
   ],
   providers: [
     StatusBar,
