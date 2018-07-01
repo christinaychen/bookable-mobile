@@ -1,16 +1,25 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
-import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+import { IonicApp, IonicErrorHandler, IonicModule, Searchbar } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { OpenPage } from '../pages/open/open';
+import { VenueService } from '../services/venue.services';
+import { SearchPage } from '../pages/search/search';
+import { ItineraryPage } from '../pages/itinerary/itinerary';
+import { TabsPage } from '../pages/tabs/tabs';
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    OpenPage,
+    HomePage,
+    SearchPage,
+    ItineraryPage,
+    TabsPage
   ],
   imports: [
     BrowserModule,
@@ -19,11 +28,16 @@ import { HomePage } from '../pages/home/home';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    OpenPage,
+    HomePage,
+    SearchPage,
+    ItineraryPage,
+    TabsPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    VenueService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

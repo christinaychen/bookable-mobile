@@ -1,14 +1,60 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
+<!--
+  Generated template for the HomePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header >
+
+  <ion-navbar hideBackButton color="primary">
+    <ion-title align = "center" style="font-family:'Courier New', Courier, monospace" ><b>Bookable</b></ion-title>
   </ion-navbar>
+
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+
+<ion-content>
+  <div class = "divclass">
+
+    Search to find a venue:               
+    <ion-searchbar
+    [(ngModel)]="myInput"
+    [showCancelButton]="shouldShowCancel"
+    (ionInput)="onInput($event)"
+    (ionCancel)="onCancel($event)">
+    </ion-searchbar>
+
+    <ion-list>
+        <ion-item *ngFor="let venue of venues">
+          {{ venue.name }}
+        </ion-item>
+  
+      </ion-list>
+  </div>
+
+  <div>
+
+    <ion-slides autoplay="3000" loop="true" speed="500" pager="true">
+        <ion-slide>
+          <h1>
+            <div>
+            <button class="picturebutton">Book at Cheesecake Factory!</button>
+            <img src="https://insidescoopsf.sfgate.com/files/2010/11/bourbonsteak.jpg">
+          </div>
+            </h1>
+
+        </ion-slide>
+        <ion-slide>
+          <h1>
+              <button class="picturebutton">Book at Regal Theaters!</button>
+            <img src="https://whatnowatlanta.com/wp-content/media/2017/12/4DX-Theater.jpg"></h1>
+        </ion-slide>
+        <ion-slide>
+          <h1>
+              <button class="picturebutton">Book an American Airlines flight!</button>
+              <img src="https://s.hdnux.com/photos/26/16/77/5828565/3/rawImage.jpg"></h1>
+        </ion-slide>
+      </ion-slides>
+  </div>
+
 </ion-content>
