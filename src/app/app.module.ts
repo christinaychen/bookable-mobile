@@ -13,6 +13,10 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { SplashPage } from '../pages/splash/splash';
 import { ProfilePage } from '../pages/profile/profile';
 import { FavoritesPage } from '../pages/favorites/favorites';
+import { HttpModule } from '@angular/http';
+import { TestPage } from '../pages/test/test';
+import { LoginPage } from '../pages/login/login';
+
 
 @NgModule({
   declarations: [
@@ -23,10 +27,13 @@ import { FavoritesPage } from '../pages/favorites/favorites';
     TabsPage,
     SplashPage,
     ProfilePage,
-    FavoritesPage
+    FavoritesPage,
+    TestPage,
+    LoginPage
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -38,7 +45,9 @@ import { FavoritesPage } from '../pages/favorites/favorites';
     TabsPage,
     SplashPage,
     ProfilePage,
-    FavoritesPage
+    FavoritesPage,
+    TestPage,
+    LoginPage
   ],
   providers: [
     StatusBar,

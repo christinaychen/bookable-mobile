@@ -4,6 +4,10 @@ import { ViewChild } from '@angular/core';
 import { Slides } from 'ionic-angular';
 import { VenueService } from '../../services/venue.services';
 import { Venue } from '../../models/venue';
+import { TestPage } from '../test/test';
+import { Http } from '../../../node_modules/@angular/http';
+import { LoginPage } from '../login/login';
+
 
 
 /**
@@ -26,8 +30,23 @@ export class HomePage {
 
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, venueService:VenueService) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, venueService:VenueService,
+  private http: Http) {
     this.venues = venueService.getAllVenues();
+    if (localStorage.getItem("TOKEN")) {
+      alert("Already logged in");
+    
+      this.http.get("http://localhost:3000/verify?jwt=" + localStorage.getItem("TOKEN")).subscribe(
+        result => {
+          console.log(result.json());
+        },
+  
+        err => {
+          // Invalid, login!
+        }
+      );
+
+    }
   }
 
   ionViewDidLoad() {
@@ -44,5 +63,12 @@ export class HomePage {
       this.slides.stopAutoplay();
   }
 
+  goToTest(){
+    this.navCtrl.push(TestPage);
+  }
+
+  goToLogin(){
+    this.navCtrl.push(LoginPage);
+  }
 
 }
