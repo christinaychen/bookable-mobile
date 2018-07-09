@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, App } from 'ionic-angular';
 import { ViewChild } from '@angular/core';
 import { Slides } from 'ionic-angular';
 import { VenueService } from '../../services/venue.services';
 import { Venue } from '../../models/venue';
+import { ProfilePage } from '../profile/profile';
 
 
 /**
@@ -26,8 +27,11 @@ export class HomePage {
 
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, venueService:VenueService) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, venueService:VenueService, private app: App) {
     this.venues = venueService.getAllVenues();
+    if (localStorage.getItem("TOKEN")) {
+      this.app.getRootNav().setRoot(ProfilePage);
+    }
   }
 
   ionViewDidLoad() {
