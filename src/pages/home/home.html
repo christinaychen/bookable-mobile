@@ -6,19 +6,21 @@
 -->
 <ion-header >
 
-  <ion-navbar hideBackButton color="primary" class="navigation">
+  <ion-navbar hideBackButton color="primary">
     <!-- <ion-title align = "center" style="font-family:'Courier New', Courier, monospace" > -->
-    <ion-title>
+    <ion-title class="navigation">
         <ion-icon name="navigate"></ion-icon>
-        <b>Your location: 32 Camps Bay Dr</b>
+        <!-- <b>Your location: 32 Camps Bay Dr</b><button>><ion-icon name="arrow-dropdown"></ion-icon>
+        </button> -->
     </ion-title>
   </ion-navbar>
+
 
 </ion-header>
 
 
 <ion-content>
-  <button ion-button (click)="goToLogin()"> GO to Login test</button>
+  <h1><div text-align:center>Welcome:</div><div> {{name}}</div></h1>
   <h2><b>Near you:</b></h2>
   <div>
     <ion-slides autoplay="3000" loop="true" speed="500" pager="false">

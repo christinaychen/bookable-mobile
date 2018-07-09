@@ -16,6 +16,9 @@ import { FavoritesPage } from '../pages/favorites/favorites';
 import { HttpModule } from '@angular/http';
 import { TestPage } from '../pages/test/test';
 import { LoginPage } from '../pages/login/login';
+import { RegistrationPage } from '../pages/registration/registration';
+import { RegistrationService } from '../services/registration.services';
+
 
 
 @NgModule({
@@ -29,7 +32,8 @@ import { LoginPage } from '../pages/login/login';
     ProfilePage,
     FavoritesPage,
     TestPage,
-    LoginPage
+    LoginPage,
+    RegistrationPage
   ],
   imports: [
     BrowserModule,
@@ -47,12 +51,14 @@ import { LoginPage } from '../pages/login/login';
     ProfilePage,
     FavoritesPage,
     TestPage,
-    LoginPage
+    LoginPage,
+    RegistrationPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     VenueService,
+    RegistrationService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
