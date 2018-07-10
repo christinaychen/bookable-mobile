@@ -5,6 +5,7 @@ import { Slides } from 'ionic-angular';
 import { VenueService } from '../../services/venue.services';
 import { Venue } from '../../models/venue';
 import { ProfilePage } from '../profile/profile';
+import { LoginPage } from '../login/login';
 
 
 /**
@@ -24,14 +25,14 @@ export class HomePage {
   // @ViewChild('myTabs') tabRef: Tabs;
 
   public venues:Array<Venue>;
+  private name: string;
 
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams, venueService:VenueService, private app: App) {
     this.venues = venueService.getAllVenues();
-    if (localStorage.getItem("TOKEN")) {
-      this.app.getRootNav().setRoot(ProfilePage);
-    }
+    this.name = this.navParams.get("nameParameter");
+    console.log(this.navParams.get("nameParameter") + "Hello");
   }
 
   ionViewDidLoad() {
@@ -48,5 +49,9 @@ export class HomePage {
       this.slides.stopAutoplay();
   }
 
+
+  goToLogin(){
+    this.navCtrl.push(LoginPage);
+  }
 
 }
