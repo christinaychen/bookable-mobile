@@ -3,136 +3,70 @@
 
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
--->
-<ion-header>
+-->       
 
-  <ion-navbar hideBackButton color=fifth>
-    <ion-title align="center" style="font-family:'Helvetica', Courier, monospace">
-      <b>Bookable</b>
-    </ion-title>
-  </ion-navbar>
-
-</ion-header>
 
 
 <ion-content>
-  <section class="pic-name">
-    <ion-grid>
-      <ion-row align-items-center>
-        <ion-col col-3>
+  <!-- <section class="pic-name"> -->
+      <!-- <ion-row align-items-center> -->
+      <ion-item>
+        <!-- <ion-col col-3> -->
+          <ion-thumbnail item-start>
           <img class="circle-pic" src="../../assets/imgs/fieri.jpg">
-        </ion-col>
-        <ion-col col-9>
+        </ion-thumbnail>
+        <!-- </ion-col>
+        <ion-col col-9> -->
           <h1>Guy Fieri</h1>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-  </section>
+        <!-- </ion-col> -->
+      </ion-item>
+  <!-- </section> -->
+
+
   <section>
     <ion-grid>
-      <ion-row>
+      <ion-row style="height: 15em">
         <ion-col col-6>
-          <div text-center>
-            <h2>Recently Booked</h2>
-          </div>
+          <button ion-button outline class = "button" block style="position:relative; height: 210px;" (click) = goToRecentlyBooked()>
+            <h4 style="font-size:24px">Recently <br>Booked</h4>
+          </button>
         </ion-col>
         <ion-col col-6>
-          <div text-center>
-            <h2>History</h2>
-          </div>
+            <button ion-button outline block style="position:relative; height: 210px;" (click) = goToStats()>
+                <h4 style="font-size:24px">Stats</h4>
+              </button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+     
+      </ion-row>
+      <ion-row>
+        <ion-col col-6>
+          <!-- <button ion-button outline color=fifth full>View Full History</button> -->
         </ion-col>
       </ion-row>
       <ion-row>
         <ion-col col-6>
-          <ion-slides autoplay="3000" loop="true" speed="500" pager="true">
-            <ion-slide>
-              <h1>
-                <div>
-                  <button class="picturebutton">Cheesecake Factory</button>
-                  <img src="https://insidescoopsf.sfgate.com/files/2010/11/bourbonsteak.jpg">
-                </div>
-              </h1>
-            </ion-slide>
-            <ion-slide>
-              <h1>
-                <button class="picturebutton">Regal Theaters</button>
-                <img src="https://whatnowatlanta.com/wp-content/media/2017/12/4DX-Theater.jpg">
-              </h1>
-            </ion-slide>
-            <ion-slide>
-              <h1>
-                <button class="picturebutton">American Airlines</button>
-                <img src="https://s.hdnux.com/photos/26/16/77/5828565/3/rawImage.jpg">
-              </h1>
-            </ion-slide>
-          </ion-slides>
+            <button ion-button outline block style="position:relative; height: 220px;" (click) = goToFavorites()>
+                <h4 style="font-size:24px">Favorites</h4>
+              </button>
         </ion-col>
         <ion-col col-6>
-          Random THings
+            <button ion-button outline block style="position:relative; height: 220px;" (click) = goToSettings()>
+                <h4 style="font-size:24px">Settings</h4>
+              </button>
         </ion-col>
       </ion-row>
-      <ion-row>
+      <ion-row style="height: 9em">
+
+      
         <ion-col col-6>
-          <button ion-button outline color=fifth full>View Full History</button>
-        </ion-col>
-        <ion-col col-6>
-            <button ion-button outline color=fifth full>Empty</button>
-          </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col col-6>
-          <div text-center>
-            <h2>Favorites</h2>
-          </div>
-        </ion-col>
-        <ion-col col-6>
-          <div text-center>
-            <h2>Settings/Preferences</h2>
-          </div>
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col col-6>
-          <div text-center>
-            <h2>
-              <ion-slides autoplay="3000" loop="true" speed="500" pager="true">
-                <ion-slide>
-                  <h1>
-                    <div>
-                      <button class="picturebutton">McDonalds</button>
-                      <img src="../../assets/imgs/mcdonalds.jpg">
-                    </div>
-                  </h1>
-                </ion-slide>
-                <ion-slide>
-                  <h1>
-                    <button class="picturebutton">Regal Theaters</button>
-                    <img src="https://whatnowatlanta.com/wp-content/media/2017/12/4DX-Theater.jpg">
-                  </h1>
-                </ion-slide>
-                <ion-slide>
-                  <h1>
-                    <button class="picturebutton">American Airlines</button>
-                    <img src="https://s.hdnux.com/photos/26/16/77/5828565/3/rawImage.jpg">
-                  </h1>
-                </ion-slide>
-              </ion-slides>
-            </h2>
-          </div>
-        </ion-col>
-        <ion-col col-6>
-          <div text-center>
-            <h2>-----</h2>
-          </div>
         </ion-col>
       </ion-row>
       <ion-row>
           <ion-col col-6>
-            <button ion-button outline color=fifth full (click)="goToFavorites()">View All Favorites</button>
           </ion-col>
-          <ion-col col-6>
-              <button ion-button outline color=fifth full>Change Preferences</button>
-            </ion-col>
+
         </ion-row>
     </ion-grid>
   </section>

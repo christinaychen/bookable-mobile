@@ -1,12 +1,17 @@
 page-profile {
     .circle-pic{
-        width:200px;
-        height:200px;
+        width:110px;
+        height:110px;
         -webkit-border-radius: 50%;
         border-radius: 50%;
     }
     .pic-name{
-        background-color: #E14568;
+        // background-color: #99D3DF;
+        height: 120px;
+    }
+
+    .textformat {
+        font-size: 24px;
     }
     h1{
         font-size: 100px;
@@ -15,15 +20,27 @@ page-profile {
     .picturebutton {
         z-index: 2;
         position: absolute;
-        top: 85%;
+        top: 55%;
         margin: auto;
         width: 100%;
         height: 40px;
         font-size:20px;
-        color: white;
-        border-top:#E14568;
-        border-bottom:#E14568;
+        border-top:#CDCDCD;
+        border-bottom:#CDCDCD;
         opacity:1%;
         background-image: -webkit-gradient(linear, left 80%, right 80%, from(rgba(205,205,205,1)), to(rgba(205,205,205,0.9))),
     }
+
+    .button {
+        cursor:pointer;
+    }
+    
+    .button:hover{
+        // background: linear-gradient(white, #cdcdcd, white);
+        background: #E9E9E9;
+        opacity: .7;
+        color: white;
+        
+    }
+
 }

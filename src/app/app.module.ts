@@ -13,11 +13,15 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { SplashPage } from '../pages/splash/splash';
 import { ProfilePage } from '../pages/profile/profile';
 import { FavoritesPage } from '../pages/favorites/favorites';
+import { RecentlyBookedPage } from '../pages/recently-booked/recently-booked';
+import { StatsPage } from '../pages/stats/stats';
+import { SettingsPage } from '../pages/settings/settings';
 import { HttpModule } from '@angular/http';
 import { TestPage } from '../pages/test/test';
 import { LoginPage } from '../pages/login/login';
 import { RegistrationPage } from '../pages/registration/registration';
 import { RegistrationService } from '../services/registration.services';
+
 
 
 
@@ -31,6 +35,9 @@ import { RegistrationService } from '../services/registration.services';
     SplashPage,
     ProfilePage,
     FavoritesPage,
+    RecentlyBookedPage,
+    StatsPage,
+    SettingsPage,
     TestPage,
     LoginPage,
     RegistrationPage
@@ -50,6 +57,9 @@ import { RegistrationService } from '../services/registration.services';
     SplashPage,
     ProfilePage,
     FavoritesPage,
+    RecentlyBookedPage,
+    StatsPage,
+    SettingsPage,
     TestPage,
     LoginPage,
     RegistrationPage
