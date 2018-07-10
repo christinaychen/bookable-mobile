@@ -14,11 +14,11 @@ export class SplashPage {
  
   ionViewDidEnter() {
  
-    this.splashScreen.hide();
+    // this.splashScreen.hide();
  
-    setTimeout(() => {
-      this.viewCtrl.dismiss();
-    }, 2000);
+    // setTimeout(() => {
+    //   this.viewCtrl.dismiss();
+    // }, 2000);
  
   }
  

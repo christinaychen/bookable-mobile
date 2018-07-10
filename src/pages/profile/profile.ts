@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { FavoritesPage } from '../favorites/favorites';
+import { RecentlyBookedPage } from '../recently-booked/recently-booked';
+import { StatsPage } from '../stats/stats';
+import { SettingsPage } from '../settings/settings';
 
 /**
  * Generated class for the ProfilePage page.
@@ -26,4 +29,18 @@ export class ProfilePage {
   goToFavorites(){
     this.navCtrl.push(FavoritesPage);
   }
+
+  goToRecentlyBooked() {
+    this.navCtrl.push(RecentlyBookedPage);
+  }
+
+  goToStats() {
+    this.navCtrl.push(StatsPage);
+  }
+
+  goToSettings() {
+    this.navCtrl.push(SettingsPage);
+  }
+
+
 }

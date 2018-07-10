@@ -12,7 +12,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 })
 export class MyApp {
  
-    rootPage:any = TabsPage;
+    rootPage:any = SplashPage;
  
     constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, modalCtrl: ModalController) {
  
@@ -20,8 +20,8 @@ export class MyApp {
  
             statusBar.styleDefault();
  
-            let splash = modalCtrl.create(SplashPage);
-            splash.present();
+            // let splash = modalCtrl.create(SplashPage);
+            // splash.present();
  
         });
  

@@ -13,6 +13,9 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { SplashPage } from '../pages/splash/splash';
 import { ProfilePage } from '../pages/profile/profile';
 import { FavoritesPage } from '../pages/favorites/favorites';
+import { RecentlyBookedPage } from '../pages/recently-booked/recently-booked';
+import { StatsPage } from '../pages/stats/stats';
+import { SettingsPage } from '../pages/settings/settings';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,10 @@ import { FavoritesPage } from '../pages/favorites/favorites';
     TabsPage,
     SplashPage,
     ProfilePage,
-    FavoritesPage
+    FavoritesPage,
+    RecentlyBookedPage,
+    StatsPage,
+    SettingsPage
   ],
   imports: [
     BrowserModule,
@@ -38,7 +44,10 @@ import { FavoritesPage } from '../pages/favorites/favorites';
     TabsPage,
     SplashPage,
     ProfilePage,
-    FavoritesPage
+    FavoritesPage,
+    RecentlyBookedPage,
+    StatsPage,
+    SettingsPage
   ],
   providers: [
     StatusBar,
