@@ -6,6 +6,7 @@ import { VenueService } from '../../services/venue.services';
 import { Venue } from '../../models/venue';
 import { ProfilePage } from '../profile/profile';
 import { LoginPage } from '../login/login';
+import { PaymentPage } from '../payment/payment';
 
 
 /**
@@ -52,6 +53,10 @@ export class HomePage {
 
   goToLogin(){
     this.navCtrl.push(LoginPage);
+  }
+
+  navigateToPayment() {
+    this.navCtrl.push(PaymentPage);
   }
 
 }
