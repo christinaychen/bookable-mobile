@@ -52,7 +52,7 @@ export class RegistrationPage {
         age: this.age,
         email: this.email,
         password: this.password
-      }, function(){})
+      }, function(){}) //Make return value instead of error so you can check
     }
     catch(err){
       console.log("email already exists");
@@ -60,5 +60,7 @@ export class RegistrationPage {
     this.navCtrl.push(TabsPage);
   }
 
-
 }
+
+
+

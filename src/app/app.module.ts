@@ -21,6 +21,8 @@ import { TestPage } from '../pages/test/test';
 import { LoginPage } from '../pages/login/login';
 import { RegistrationPage } from '../pages/registration/registration';
 import { RegistrationService } from '../services/registration.services';
+import { CartPage } from '../pages/cart/cart';
+import { VenuesPage } from '../pages/venues/venues';
 
 
 
@@ -40,7 +42,9 @@ import { RegistrationService } from '../services/registration.services';
     SettingsPage,
     TestPage,
     LoginPage,
-    RegistrationPage
+    RegistrationPage,
+    CartPage,
+    VenuesPage
   ],
   imports: [
     BrowserModule,
@@ -62,7 +66,9 @@ import { RegistrationService } from '../services/registration.services';
     SettingsPage,
     TestPage,
     LoginPage,
-    RegistrationPage
+    RegistrationPage,
+    CartPage,
+    VenuesPage
   ],
   providers: [
     StatusBar,

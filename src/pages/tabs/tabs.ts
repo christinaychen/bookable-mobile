@@ -4,6 +4,7 @@ import { HomePage } from '../home/home';
 import { SearchPage } from '../search/search';
 import { ItineraryPage } from '../itinerary/itinerary';
 import { ProfilePage } from '../profile/profile';
+import { CartPage } from '../cart/cart';
 
 /**
  * Generated class for the TabsPage page.
@@ -23,6 +24,7 @@ export class TabsPage {
   tab2Root = SearchPage;
   tab3Root = ItineraryPage;
   tab4Root = ProfilePage;
+  tab5Root = CartPage;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }

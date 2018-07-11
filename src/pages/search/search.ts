@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { VenueService } from '../../services/venue.services';
 import { Venue } from '../../models/venue';
+import { VenuesPage } from '../venues/venues';
 
 /**
  * Generated class for the SearchPage page.
@@ -61,6 +62,11 @@ export class SearchPage {
   bookR(){
     console.log(this.findRestaurants);
     console.log(this.locationR);
+    this.navCtrl.push(VenuesPage, {
+      searchParameter: this.findRestaurants,
+      locationParameter: this.locationR
+    })
+
   }
 
   bookM(){

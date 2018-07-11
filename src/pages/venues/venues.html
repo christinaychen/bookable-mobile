@@ -6,13 +6,36 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>venues</ion-title>
+  <ion-navbar color="primary">
+    <!-- <ion-title align = "center" style="font-family:'Courier New', Courier, monospace" > -->
+    <ion-title align="center" style="font-family:'Courier New', Courier, monospace">
+      <b>Search</b>
+    </ion-title>
   </ion-navbar>
-
 </ion-header>
 
 
-<ion-content padding>
 
+<ion-content padding>
+  You're looking for {{search}} around {{location}}
+  <ion-grid>
+    <ion-row>
+      <ion-col col-3>
+        <ion-card>
+          <img src="../../assets/imgs/searestaurant.jpg"/>
+          <ion-card-content>
+            <ion-card-title>
+              Sea Restaurant
+              </ion-card-title>
+            <p>
+              The most popular industrial group ever, and largely
+              responsible for bringing the music to a mass audience.
+            </p>
+          </ion-card-content>
+          <button ion-button>See Details</button>
+          <button ion-button>Make Reservation</button>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
