@@ -24,6 +24,7 @@ import { RegistrationService } from '../services/registration.services';
 import { PaymentPage } from '../pages/payment/payment';
 import { CartPage } from '../pages/cart/cart';
 import { VenuesPage } from '../pages/venues/venues';
+import { MapPage } from '../pages/map/map';
 
 
 
@@ -46,7 +47,8 @@ import { VenuesPage } from '../pages/venues/venues';
     RegistrationPage,
     CartPage,
     VenuesPage,
-    PaymentPage
+    PaymentPage,
+    MapPage
   ],
   imports: [
     BrowserModule,
@@ -71,7 +73,8 @@ import { VenuesPage } from '../pages/venues/venues';
     RegistrationPage,
     CartPage,
     VenuesPage,
-    PaymentPage
+    PaymentPage,
+    MapPage
   ],
   providers: [
     StatusBar,
