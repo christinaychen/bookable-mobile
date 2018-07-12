@@ -28,25 +28,7 @@ export class CartPage {
     console.log('ionViewDidLoad CartPage');
   }
 
-  showMap(){
-    console.log("running");
-    this.http
-      .post("http://localhost:3000/Maps/{venueId}", {
-        venueId: this.venueId
-      }).subscribe(
-      // .subscribe((data:Response)=>{
-      //   this.map = data.json().body.results;
-      //   console.log(data.json().body.results)
-      // },
-        result => {
-          console.log(result);
-        },
 
-        err => {
-          console.log(err);
-        }
-      );
-  }
 
 
 }
