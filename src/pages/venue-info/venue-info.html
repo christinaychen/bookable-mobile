@@ -1,0 +1,38 @@
+<!--
+  Generated template for the VenueInfoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Venue Info</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<!-- AIzaSyASClabdsiB_ZnpEI_hRDSzMQJcME6Gers -->
+<ion-content padding>
+
+    <!-- <script type="text/javascript" async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASClabdsiB_ZnpEI_hRDSzMQJcME6Gers&callback=initMap"
+  type="text/javascript"></script> -->
+  <!-- <agm-map [latitude]="lat" [longitude]="lng">
+      <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+    </agm-map> -->
+
+    <div class="container">
+      <!-- <div class="form-group">
+        <input placeholder="search for location" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control" #search [formControl]="searchControl">
+      </div> -->
+      <!-- <agm-map [latitude]="latitude" [longitude]="longitude" [scrollwheel]="false" [zoom]="zoom">
+        <agm-marker [latitude]="latitude" [longitude]="longitude"></agm-marker>
+      </agm-map> -->
+
+      <agm-map [latitude]="lat" [longitude]="lng" [scrollwheel]="false" [zoom]="zoom">
+          <agm-direction [origin]="origin" [destination]="destination">
+          </agm-direction>
+        </agm-map>
+    </div>
+
+</ion-content>

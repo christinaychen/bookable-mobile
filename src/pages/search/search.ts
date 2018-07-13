@@ -31,7 +31,7 @@ export class SearchPage {
   locationTTo: string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, venueService:VenueService) {
-    this.venues = venueService.getAllVenues();
+    // this.venues = venueService.getAllVenues();
     this.findRestaurants = "";
     this.locationR = "";
     this.findMovies = "";

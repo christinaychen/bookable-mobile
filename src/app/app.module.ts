@@ -21,10 +21,15 @@ import { TestPage } from '../pages/test/test';
 import { LoginPage } from '../pages/login/login';
 import { RegistrationPage } from '../pages/registration/registration';
 import { RegistrationService } from '../services/registration.services';
-import { PaymentPage } from '../pages/payment/payment';
 import { CartPage } from '../pages/cart/cart';
 import { VenuesPage } from '../pages/venues/venues';
+import { PaymentPage } from '../pages/payment/payment';
+import { VenueInfoPage } from '../pages/venue-info/venue-info';
+import { AgmCoreModule } from '@agm/core';
+import { Geolocation } from '@ionic-native/geolocation';
 
+ 
+import { AgmDirectionModule } from 'agm-direction'
 
 
 
@@ -46,12 +51,18 @@ import { VenuesPage } from '../pages/venues/venues';
     RegistrationPage,
     CartPage,
     VenuesPage,
-    PaymentPage
+    PaymentPage,
+    VenueInfoPage
   ],
   imports: [
     BrowserModule,
     HttpModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyASClabdsiB_ZnpEI_hRDSzMQJcME6Gers',
+      libraries: ["places", "geometry"]
+    }),
+    AgmDirectionModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -71,14 +82,17 @@ import { VenuesPage } from '../pages/venues/venues';
     RegistrationPage,
     CartPage,
     VenuesPage,
-    PaymentPage
+    PaymentPage,
+    VenueInfoPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     VenueService,
     RegistrationService,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    Geolocation,
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+
   ]
 })
 export class AppModule {}

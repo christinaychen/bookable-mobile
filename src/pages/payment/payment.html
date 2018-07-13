@@ -7,24 +7,68 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Payment</ion-title>
+    <ion-title>payment</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+    <script type="text/javascript" src="https://js.stripe.com/v3/"></script>
 
-  <form action="your-server-side-code" method="POST">
-    <script
-      src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-      data-key="pk_test_jzNbIR2ZGQHyjdLMlavbBP69"
-      data-amount="999"
-      data-name="Demo Site"
-      data-description="Example charge"
-      data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
-      data-locale="auto">
-    </script>
-  </form>
-  
+    <form action="/charge" method="post" id="payment-form">
+      <div class="form-row">
+        <label for="card-element">
+          Credit or debit card
+        </label>
+        <div id="card-element">
+          <!-- A Stripe Element will be inserted here. -->
+        </div>
+    
+        <!-- Used to display form errors. -->
+        <div id="card-errors" role="alert"></div>
+      </div>
+    
+      <button>Submit Payment</button>
+    </form>
+
+  <!-- <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+  <script type="text/javascript">
+    var stripe = Stripe('pk_test_jzNbIR2ZGQHyjdLMlavbBP69'); // use your test publishable key
+    var elements = stripe.elements();
+  </script> -->
+    <!-- <h1>Stripe Form</h1>
+
+
+<form action="" method="POST" id="payment-form" (submit)="getToken()">
+  <span class="payment-message">{{message}}</span>
+
+  <div class="form-row">
+    <label>
+      <span>Card Number</span>
+      <input [(ngModel)]="cardNumber" name="card-number" type="text" size="20" data-stripe="number">
+    </label>
+  </div>
+
+  <div class="form-row">
+    <label>
+      <span>Expiration (MM/YY)</span>
+      <input [(ngModel)]="expiryMonth" name="expiry-month" type="text" size="2" data-stripe="exp_month">
+    </label>
+    <span> / </span>
+    <input [(ngModel)]="expiryYear" name="expiry-year" type="text" size="2" data-stripe="exp_year">
+  </div>
+
+  <div class="form-row">
+    <label>
+      <span>CVC</span>
+      <input [(ngModel)]="cvc" name="cvc" type="text" size="4" data-stripe="cvc">
+    </label>
+  </div>
+
+  <input type="submit" value="Submit Payment">
+</form> -->
+
+    <button (click)="openCheckout()">Purchase</button>
+
 </ion-content>

@@ -16,34 +16,26 @@ export class VenueService {
 
     getAllVenues() {
         this.venues = [];
-        var venue1 = new Venue;
-        venue1.name = "American Airlines";
-        var venue2 = new Venue;
-        venue2.name = "Cheesecake Factory";
-        var venue3 = new Venue;
-        venue3.name = "Regal Theaters"
-        var venue4 = new Venue;
-        venue4.name = "American Airlines";
-        var venue5 = new Venue;
-        venue5.name = "Cheesecake Factory";
-        var venue6 = new Venue;
-        venue6.name = "Regal Theaters"
-        var venue7 = new Venue;
-        venue7.name = "American Airlines";
-        var venue8 = new Venue;
-        venue8.name = "Cheesecake Factory";
-        var venue9 = new Venue;
-        venue9.name = "Regal Theaters"
 
+        var venue1 = new Venue;
+        venue1.name = "V&A Food Market";
+        venue1.latitude = -33.9066;
+        venue2.longitude = 18.4193;
+
+        var venue2 = new Venue;
+        venue2.name = "Kauai";
+        venue2.latitude=-33.9056;
+        venue2.longitude=18.4199;
+        
+        var venue3 = new Venue;
+        venue3.name = "Radisson RED Hotel"
+        venue3.latitude = -33.9086;
+        venue3.longitude = 18.4227;
+    
         this.venues.push(venue1);
         this.venues.push(venue2);
         this.venues.push(venue3);
-        this.venues.push(venue4);
-        this.venues.push(venue5);
-        this.venues.push(venue6);
-        this.venues.push(venue7);
-        this.venues.push(venue8);
-        this.venues.push(venue9);
+
 
         return this.venues;
     }
