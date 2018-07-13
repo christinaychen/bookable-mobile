@@ -78,9 +78,6 @@ export class HomePage {
     this.navCtrl.push(LoginPage);
   }
 
-  goToPayment(){
-    this.navCtrl.push(PaymentPage);
-  }
 
 
   private setCurrentPosition() {

@@ -5,6 +5,7 @@ import { VenueService } from '../../services/venue.services';
 import { MapPage } from '../map/map';
 import { VenueInfoPage } from '../venue-info/venue-info';
 
+
 /**
  * Generated class for the VenuesPage page.
  *

@@ -6,31 +6,32 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>cart</ion-title>
+  <ion-navbar color="primary">
+        <ion-title>Cart<button class = "checkoutbutton" ion-button (click)=presentPaymentModal()>Checkout</button></ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-    <ion-list>
-        <h1 class="label">
-          <button style="background-color:white"> <img src="https://images.pexels.com/photos/70497/pexels-photo-70497.jpeg?cs=srgb&dl=food-dinner-lunch-70497.jpg&fm=jpg"></button>
-          <ion-item><b>Food</b><p>Tag, Tag</p></ion-item>
-        </h1>
-        <h1 class="label">
-            <button style="background-color:white"> <img src="https://images.pexels.com/photos/70497/pexels-photo-70497.jpeg?cs=srgb&dl=food-dinner-lunch-70497.jpg&fm=jpg"></button>
-            <ion-item><b>Food</b><p>Tag, Tag</p></ion-item>
-          </h1>
-          <h1 class="label">
-              <button style="background-color:white"> <img src="https://images.pexels.com/photos/70497/pexels-photo-70497.jpeg?cs=srgb&dl=food-dinner-lunch-70497.jpg&fm=jpg"></button>
-              <ion-item><b>Food</b><p>Tag, Tag</p></ion-item>
-            </h1>
-            <h1 class="label">
-                <button style="background-color:white"> <img src="https://images.pexels.com/photos/70497/pexels-photo-70497.jpeg?cs=srgb&dl=food-dinner-lunch-70497.jpg&fm=jpg"></button>
-                <ion-item><b>Food</b><p>Tag, Tag</p></ion-item>
-              </h1>
-      </ion-list>
-    <button (click)=goToPayment()>Checkout</button>
+    <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-card>
+              <img src="../../assets/imgs/searestaurant.jpg"/>
+              <ion-card-content>
+                <div class="center">
+                  <ion-card-title>
+                  Sea Restaurant
+                  </ion-card-title>
+                <p>
+                  Reservation: Table 3
+                </p> 
+              </div>
+              </ion-card-content>
+              <div class="center"><button ion-button (click)=goToMap()>Change Reservation</button></div>
+              </ion-card>
+            </ion-col>
+        </ion-row>
+      </ion-grid>
 </ion-content>

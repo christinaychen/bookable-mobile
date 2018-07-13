@@ -8,6 +8,8 @@ import {
 } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { ViewController } from 'ionic-angular';
+
 declare var stripe: any;
 declare var elements: any;
 
@@ -33,11 +35,13 @@ export class PaymentPage implements AfterViewInit, OnDestroy {
   error: string;
 
   
-  constructor(private cd: ChangeDetectorRef, public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public viewCtrl: ViewController,private cd: ChangeDetectorRef, public navCtrl: NavController, public navParams: NavParams) {
     
   }
 
-
+  closeModal() {
+    this.viewCtrl.dismiss();
+  }
 
   ngOnDestroy() {
     this.card.removeEventListener('change', this.cardHandler);
