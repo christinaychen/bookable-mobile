@@ -3,6 +3,7 @@ import { NavController, NavParams, App } from 'ionic-angular';
 import { VenueService } from '../../services/venue.services';
 import { Venue } from '../../models/venue';
 import { Http, Response } from '@angular/http';
+import { PaymentPage } from '../payment/payment';
 
 
 /**
@@ -27,7 +28,9 @@ export class CartPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad CartPage');
   }
-
+  goToPayment() {
+    this.navCtrl.push(PaymentPage);
+  }
 
 
 

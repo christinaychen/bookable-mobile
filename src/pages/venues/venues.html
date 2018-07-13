@@ -20,7 +20,7 @@
   You're looking for {{search}} around {{location}}
   <ion-grid>
     <ion-row >
-      <ion-col col-3>
+      <ion-col>
         <ion-card>
           <img src="../../assets/imgs/searestaurant.jpg"/>
           <ion-card-content>
@@ -32,7 +32,7 @@
               responsible for bringing the music to a mass audience.
             </p> </div>
           </ion-card-content>
-          <div class="center"><button ion-button>See Details</button></div>
+          <div class="center"><button ion-button (click)=goToDetails()>See Details</button></div>
           <div class="center"><button ion-button (click)="goToMap()">Make Reservations</button></div>        </ion-card>
       </ion-col>
     </ion-row>

@@ -27,7 +27,7 @@ export class VenueInfoPage implements OnInit{
   public latitude: number = 33;
   public longitude: number = 18;
 
-  public latitudeDestination: number = 33;
+  public latitudeDestination: number = -33;
   public longitudeDestination: number = 18;
 
   public searchControl: FormControl;
@@ -63,12 +63,16 @@ getDirection() {
     this.latitude = position.coords.latitude;
     this.longitude = position.coords.longitude;
     this.zoom = 12;
+    this.latitudeDestination = -33;
+    this.longitudeDestination = 18;
     // this.calculateDistance();
 
     this.origin = { lat: this.latitude, lng: this.longitude }
     this.destination = { lat: this.latitudeDestination, lng: this.longitudeDestination }
   });
 }
+
+
 
 // calculateDistance() {
 //   const orig = new google.maps.LatLng(this.latitude,this.longitude);

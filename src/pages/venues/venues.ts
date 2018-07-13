@@ -3,6 +3,7 @@ import { NavController, NavParams } from 'ionic-angular';
 import { CartPage } from '../cart/cart';
 import { VenueService } from '../../services/venue.services';
 import { MapPage } from '../map/map';
+import { VenueInfoPage } from '../venue-info/venue-info';
 
 /**
  * Generated class for the VenuesPage page.
@@ -37,6 +38,12 @@ export class VenuesPage {
     this.navCtrl.push(MapPage, {
       nameParameter: this.venueName
     });
+  }
+
+  goToDetails() {
+    this.navCtrl.push(VenueInfoPage, {
+      nameParameter: this.venueName
+    })
   }
 
 }

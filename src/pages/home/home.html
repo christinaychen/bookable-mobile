@@ -9,12 +9,16 @@
   <ion-navbar hideBackButton color="primary">
     <ion-title class="navigation">
         <ion-icon name="navigate"></ion-icon>
+        <!-- <reverse-geocode lat="40.730885" lng="-73.997383"></reverse-geocode> -->
+
+        <!-- <reverse-geocode lat={{latitude}} lng={{longitude}}></reverse-geocode> -->
+
         <!-- <b>Your location: 32 Camps Bay Dr</b><button>><ion-icon name="arrow-dropdown"></ion-icon>
         </button> -->
 
-        <ion-buttons end>
+        <!-- <ion-buttons end>
             <button ion-button (click)="showNearbyResto()"><ion-icon name="list"></ion-icon>Restaurants</button>
-            </ion-buttons>  
+            </ion-buttons>   -->
     </ion-title>
   </ion-navbar>
 
@@ -36,7 +40,7 @@
         data-locale="auto">
       </script>
     </form> -->
-    <button (click)=goToPayment()>map</button>
+    <button (click)=goToPayment()>payment</button>
 
   <h2><div text-align:center><b>Welcome</b>:</div><div> {{name}}</div></h2>
 

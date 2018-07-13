@@ -79,21 +79,21 @@ export class HomePage {
   }
 
   goToPayment(){
-    this.navCtrl.push(VenueInfoPage);
+    this.navCtrl.push(PaymentPage);
   }
 
 
-//   private setCurrentPosition() {
-//     if ("geolocation" in navigator) {
-//       navigator.geolocation.getCurrentPosition((position) => {
-//         this.latitude = position.coords.latitude;
-//         this.longitude = position.coords.longitude;
-//         this.zoom = 12;
+  private setCurrentPosition() {
+    if ("geolocation" in navigator) {
+      navigator.geolocation.getCurrentPosition((position) => {
+        this.latitude = position.coords.latitude;
+        this.longitude = position.coords.longitude;
+        this.zoom = 12;
         
         
-//       });
-//     }
-//   }
+      });
+    }
+  }
 
 
 // addMarker(){

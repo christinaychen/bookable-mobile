@@ -29,7 +29,8 @@ import { AgmCoreModule } from '@agm/core';
 import { Geolocation } from '@ionic-native/geolocation';
 import { MapPage } from '../pages/map/map';
 
- 
+import {FormsModule} from '@angular/forms';
+
 import { AgmDirectionModule } from 'agm-direction'
 
 
@@ -60,6 +61,7 @@ import { AgmDirectionModule } from 'agm-direction'
     BrowserModule,
     HttpModule,
     IonicModule.forRoot(MyApp),
+    FormsModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyASClabdsiB_ZnpEI_hRDSzMQJcME6Gers',
       libraries: ["places", "geometry"]
@@ -94,6 +96,7 @@ import { AgmDirectionModule } from 'agm-direction'
     VenueService,
     RegistrationService,
     Geolocation,
+    
     {provide: ErrorHandler, useClass: IonicErrorHandler},
 
   ]
