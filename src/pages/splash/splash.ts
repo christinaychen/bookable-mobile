@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { ViewController } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { NavController } from 'ionic-angular';
+import { LoginPage } from '../login/login';
+
  
 @Component({
   selector: 'page-splash',
@@ -8,7 +11,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 })
 export class SplashPage {
  
-  constructor(public viewCtrl: ViewController, public splashScreen: SplashScreen) {
+  constructor(public viewCtrl: ViewController, public splashScreen: SplashScreen, public navCtrl: NavController) {
  
   }
  
@@ -17,7 +20,7 @@ export class SplashPage {
     this.splashScreen.hide();
  
     setTimeout(() => {
-      this.viewCtrl.dismiss();
+      this.navCtrl.push(LoginPage);
     }, 2000);
  
   }

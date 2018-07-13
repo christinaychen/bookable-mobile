@@ -6,7 +6,7 @@ import { Venue } from "../models/venue";
 
 
 export class VenueService {
-    private venues: Array<Venue>;
+    public venues: Array<Venue>;
 
     constructor() {
         this.venues = [];

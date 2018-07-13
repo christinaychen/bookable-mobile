@@ -13,19 +13,22 @@ import { LoginPage } from '../pages/login/login';
 })
 export class MyApp {
  
-    rootPage:any = LoginPage;
+    rootPage:any = SplashPage;
  
     constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, modalCtrl: ModalController) {
- 
+        
         platform.ready().then(() => {
  
             statusBar.styleDefault();
  
-            let splash = modalCtrl.create(SplashPage);
-            splash.present();
+            //let splash = modalCtrl.create(SplashPage);
+            //splash.present();
+
  
-        });
- 
+        }); 
+        
+
+
     }
  
 }

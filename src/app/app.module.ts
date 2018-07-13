@@ -27,6 +27,7 @@ import { PaymentPage } from '../pages/payment/payment';
 import { VenueInfoPage } from '../pages/venue-info/venue-info';
 import { AgmCoreModule } from '@agm/core';
 import { Geolocation } from '@ionic-native/geolocation';
+import { MapPage } from '../pages/map/map';
 
  
 import { AgmDirectionModule } from 'agm-direction'
@@ -52,7 +53,8 @@ import { AgmDirectionModule } from 'agm-direction'
     CartPage,
     VenuesPage,
     PaymentPage,
-    VenueInfoPage
+    VenueInfoPage,
+    MapPage
   ],
   imports: [
     BrowserModule,
@@ -83,7 +85,8 @@ import { AgmDirectionModule } from 'agm-direction'
     CartPage,
     VenuesPage,
     PaymentPage,
-    VenueInfoPage
+    VenueInfoPage,
+    MapPage
   ],
   providers: [
     StatusBar,

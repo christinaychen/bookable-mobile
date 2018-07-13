@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, App } from 'ionic-angular';
+import { VenueService } from '../../services/venue.services';
+import { Venue } from '../../models/venue';
+import { Http, Response } from '@angular/http';
+
 
 /**
  * Generated class for the CartPage page.
@@ -13,12 +17,18 @@ import { NavController, NavParams } from 'ionic-angular';
   templateUrl: 'cart.html',
 })
 export class CartPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  public map: Array<Array<number>>;
+  public venueId: number;
+  constructor(public navCtrl: NavController, public navParams: NavParams, 
+    private venueService:VenueService, private http: Http, private app: App) {
+    this.venueId = 2;
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CartPage');
   }
+
+
+
 
 }
