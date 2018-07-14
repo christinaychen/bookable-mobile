@@ -4,6 +4,8 @@ import { FavoritesPage } from '../favorites/favorites';
 import { RecentlyBookedPage } from '../recently-booked/recently-booked';
 import { StatsPage } from '../stats/stats';
 import { SettingsPage } from '../settings/settings';
+import { LoginPage } from '../login/login';
+
 
 /**
  * Generated class for the ProfilePage page.
@@ -42,5 +44,8 @@ export class ProfilePage {
     this.navCtrl.push(SettingsPage);
   }
 
-
+  logout() {
+    localStorage.removeItem("TOKEN");
+    this.navCtrl.setRoot(LoginPage);
+  }
 }

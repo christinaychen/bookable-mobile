@@ -18,13 +18,14 @@
 
 
 <ion-content padding>
+    <h2><div style="text-align: center">Booking Made Easy</div></h2>
+
   <ion-grid>
     <ion-row align-items-center>
-      <ion-col col-6>
-        <img src="../../assets/imgs/booking.png" width="400" height="400">
+      <ion-col>
+        <div style="align-items:center"><img src="../../assets/imgs/booking.png" width="150" height="150"></div>
       </ion-col>
-      <ion-col col-6>
-        <h2><div style="text-align: center">Booking Made Easy</div></h2>
+      <ion-col>
         <br>
         <ion-list class="border">
           <ion-item-divider>
@@ -35,11 +36,11 @@
           </ion-item-divider>
         </ion-list>
         <div><button ion-button (click)="login()" full>Login</button></div>
+      </ion-col>
         <br>
         <br>
         <br> Don't have an account? Get one here!
         <button ion-button (click)="goToRegistration()">Register</button>
-      </ion-col>
     </ion-row>
   </ion-grid>
 </ion-content>
