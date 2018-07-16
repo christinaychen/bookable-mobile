@@ -8,10 +8,8 @@ import { ProfilePage } from '../profile/profile';
 import { LoginPage } from '../login/login';
 import { PaymentPage } from '../payment/payment';
 import { VenueInfoPage } from '../venue-info/venue-info'
-import { Geolocation ,GeolocationOptions ,Geoposition ,PositionError } from '@ionic-native/geolocation'; 
-import { googlemaps } from 'googlemaps';
+import { Geolocation ,GeolocationOptions ,Geoposition } from '@ionic-native/geolocation'; 
 
-// let service = new google.maps.places.PlacesService(this.map);
 
 
 /**
@@ -20,7 +18,6 @@ import { googlemaps } from 'googlemaps';
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-declare var google;
 
 @IonicPage()
 
