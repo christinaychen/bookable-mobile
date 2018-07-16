@@ -9,7 +9,6 @@ import { LoginPage } from '../login/login';
 import { PaymentPage } from '../payment/payment';
 import { VenueInfoPage } from '../venue-info/venue-info'
 import { Geolocation ,GeolocationOptions ,Geoposition ,PositionError } from '@ionic-native/geolocation'; 
-import { googlemaps } from 'googlemaps';
 
 // let service = new google.maps.places.PlacesService(this.map);
 
