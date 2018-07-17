@@ -26,7 +26,7 @@ export class LoginPage {
   constructor(public navCtrl: NavController, private http:Http, private app: App, public navParams: NavParams) {
     this.name = "test";
     if (localStorage.getItem("TOKEN")) {
-      this.http.get("http://localhost:3000/verify?jwt=" + localStorage.getItem("TOKEN")).subscribe(
+      this.http.get("https://bookable-api.herokuapp.com/verify?jwt=" + localStorage.getItem("TOKEN")).subscribe(
         result => {
           console.log(result.json());
         },
@@ -46,7 +46,7 @@ export class LoginPage {
 
   login() {
     this.http
-      .post("http://localhost:3000/login", {
+      .post("https://bookable-api.herokuapp.com/login", {
         email: this.email,
         password: this.password,
       })
