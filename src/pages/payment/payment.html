@@ -8,7 +8,7 @@
 
   <ion-navbar color="primary">
       <ion-title>Payment</ion-title>
-      <button ion-button class = "closebutton" (click)="closeModal()">Close</button>
+      <!-- <button ion-button class = "closebutton" (click)="closeModal()">Close</button> -->
   </ion-navbar>
 
 </ion-header>
@@ -23,7 +23,7 @@
           <div id="card-errors" role="alert" *ngIf="error">{{ error }}</div>
         </div>
       
-        <button type="submit">Pay $777</button>
+        <button type="submit">Pay {{this.amount}}</button>
       </form>
   <!-- <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
   <script type="text/javascript">

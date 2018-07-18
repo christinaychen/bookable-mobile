@@ -5,6 +5,9 @@ import { RecentlyBookedPage } from '../recently-booked/recently-booked';
 import { StatsPage } from '../stats/stats';
 import { SettingsPage } from '../settings/settings';
 import { LoginPage } from '../login/login';
+import { Customer } from '../../models/customers';
+import { get } from 'http';
+import { Http } from '@angular/http';
 
 
 /**
@@ -20,8 +23,20 @@ import { LoginPage } from '../login/login';
   templateUrl: 'profile.html',
 })
 export class ProfilePage {
+  public cus: Customer = new Customer();
+  public cusname: string;
+  constructor(public navCtrl: NavController, private http:Http, public navParams: NavParams){  
+    this.getName();
+  }
+  getName() {
+    this.http
+    .get(`http://localhost:3000/customer?jwt=${localStorage.getItem("TOKEN")}`)
+    .subscribe(
+      result => {
+        this.cusname = result.json().name;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+      }
+    );
   }
 
   ionViewDidLoad() {

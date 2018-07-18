@@ -8,21 +8,28 @@
 
 
 <ion-content>
-  <!-- <section class="pic-name"> -->
-      <!-- <ion-row align-items-center> -->
-      <ion-item>
-        <!-- <ion-col col-3> -->
-          <ion-thumbnail item-start>
-          <img class="circle-pic" src="../../assets/imgs/fieri.jpg">
-        </ion-thumbnail>
-        <!-- </ion-col>
-        <ion-col col-9> -->
-          <h2 style="font-size:30px"><b>Guy Fieri</b></h2>
-        <!-- </ion-col> -->
-      </ion-item>
-  <!-- </section> -->
 
-  <button ion-button (click)=logout()>Logout</button>
+      <ion-item>
+          <!-- <ion-thumbnail item-start>
+          <img class="circle-pic" src="../../assets/imgs/fieri.jpg">
+        </ion-thumbnail> -->
+
+        <ion-grid>
+          <ion-row>
+
+
+            <ion-col col-11>
+                <h2 style="font-size:30px"><b>{{cusname}}</b></h2>
+            </ion-col>
+            <ion-col col-1>
+                <button ion-button class="logout" style="position:relative" (click)=logout()>Logout</button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+
+      </ion-item>
+
+
 
   <section>
     <ion-grid>

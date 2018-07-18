@@ -19,7 +19,7 @@
     "@angular/compiler-cli": "5.2.11",
     "@angular/core": "5.2.11",
     "@angular/forms": "5.2.11",
-    "@angular/http": "5.2.11",
+    "@angular/http": "^5.2.11",
     "@angular/platform-browser": "5.2.11",
     "@angular/platform-browser-dynamic": "5.2.11",
     "@ionic-native/core": "4.8.0",
@@ -33,6 +33,7 @@
     "angular-reverse-geocode-assemany": "^1.0.1",
     "chart.js": "^2.7.2",
     "chartjs": "^0.3.24",
+    "cordova-android": "7.0.0",
     "cordova": "^8.0.0",
     "cordova-ios": "4.5.4",
     "cordova-plugin-device": "^2.0.2",
@@ -67,6 +68,7 @@
       "cordova-plugin-ionic-keyboard": {}
     },
     "platforms": [
+      "android",
       "ios"
     ]
   }

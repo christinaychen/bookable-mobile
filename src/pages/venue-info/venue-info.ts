@@ -36,13 +36,25 @@ export class VenueInfoPage implements OnInit{
   public origin: {}
   public destination: {}
 
+  public address: string;
+  public rating: number;
+  public price: string;
+  public categories: String[];
+
   @ViewChild("search")
   public searchElementRef: ElementRef;
 
   constructor(
     private mapsAPILoader: MapsAPILoader,
     private ngZone: NgZone, public navCtrl: NavController, public navParams: NavParams
-  ) {}
+  ) {
+    this.address = this.navParams.get("address");
+    this.rating = this.navParams.get("rating");
+    this.price = this.navParams.get("price");
+    this.categories = this.navParams.get("categories").title;
+    this.latitudeDestination = this.navParams.get("coordinates").latitude;
+    this.longitudeDestination = this.navParams.get("coordinates").longitude;
+  }
 
 
   ionViewDidLoad() {
@@ -58,17 +70,20 @@ ngOnInit() {
  
 getDirection() {
   navigator.geolocation.getCurrentPosition((position) => {
-    this.latitude = position.coords.latitude;
-    this.longitude = position.coords.longitude;
+    // this.latitude = position.coords.latitude;
+    // this.longitude = position.coords.longitude;
+    this.latitude = 36.0014;
+    this.longitude = -78.9382;
     this.zoom = 12;
-    this.latitudeDestination = -33;
-    this.longitudeDestination = 18;
+
     // this.calculateDistance();
 
     this.origin = { lat: this.latitude, lng: this.longitude }
     this.destination = { lat: this.latitudeDestination, lng: this.longitudeDestination }
   });
 }
+
+
 
 
 

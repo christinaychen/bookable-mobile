@@ -9,6 +9,7 @@ import {
 import { NgForm } from '@angular/forms';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ViewController } from 'ionic-angular';
+import { Http } from '@angular/http';
 
 declare var stripe: any;
 declare var elements: any;
@@ -34,10 +35,13 @@ export class PaymentPage implements AfterViewInit, OnDestroy {
   cardHandler = this.onChange.bind(this);
   error: string;
 
+  amount: number;
+  orderItemId: number;
   
-  constructor(public viewCtrl: ViewController,private cd: ChangeDetectorRef, public navCtrl: NavController, public navParams: NavParams) {
-    
+  constructor(private http:Http, public viewCtrl: ViewController,private cd: ChangeDetectorRef, public navCtrl: NavController, public navParams: NavParams) {
   }
+
+
 
   closeModal() {
     this.viewCtrl.dismiss();
@@ -60,13 +64,27 @@ export class PaymentPage implements AfterViewInit, OnDestroy {
   async onSubmit(form: NgForm) {
     const { token, error } = await stripe.createToken(this.card);
     // const { token, error } = await stripe.createToken(this.card, {
-    //   email: this.emailAddress
+    //   email: this.email
     // });
     if (error) {
       console.log('Something is wrong:', error);
     } else {
       console.log('Success!', token);
-      // ...send the token to the your backend to process the charge
+      // this.http
+      // .post("http://localhost:3000/purchase", {
+      //   stripeToken: stripe.token,
+      //   productId: stripe.productId,
+      // });   
+      this.http
+      .post(`http://localhost:3000/charge?jwt=${localStorage.getItem("TOKEN")}`, {
+      stripeToken: stripe.token,
+      orderItemId: stripe.productId
+      })
+      .subscribe(
+        result => {
+          console.log(result.json());
+        }
+      ); 
     }
   }
 
@@ -92,6 +110,7 @@ export class PaymentPage implements AfterViewInit, OnDestroy {
   ionViewDidLoad() {
     console.log('ionViewDidLoad PaymentPage');
   }
+
 
 
     // openCheckout() {
