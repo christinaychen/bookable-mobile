@@ -70,6 +70,17 @@ export class HomePage {
     this.getBusinesses;
   }
 
+  goToVenueInfo(business) {
+    this.navCtrl.push(VenueInfoPage, {
+      address: business.location.address1 + ", " + business.location.city + ", " + business.location.state + " " + business.location.zip_code,
+      rating: business.rating,
+      price: business.price,
+      categories: business.categories,
+      coordinates: business.coordinates
+    })
+
+  }
+
   getName() {
     this.http
     .get(`http://localhost:3000/customer?jwt=${localStorage.getItem("TOKEN")}`)

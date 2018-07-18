@@ -76,7 +76,7 @@ export class PaymentPage implements AfterViewInit, OnDestroy {
       //   productId: stripe.productId,
       // });   
       this.http
-      .post(`http://localhost:3000/charge?jwt=${localStorage.getItem("TOKEN")}&orderItemId=${token.productId}`, {
+      .post(`http://localhost:3000/charge?jwt=${localStorage.getItem("TOKEN")}`, {
       stripeToken: stripe.token,
       orderItemId: stripe.productId
       })
