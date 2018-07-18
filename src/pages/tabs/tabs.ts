@@ -24,7 +24,7 @@ export class TabsPage {
   tab2Root = SearchPage;
   tab3Root = ItineraryPage;
   tab4Root = ProfilePage;
-  tab5Root = CartPage;
+  //tab5Root = CartPage;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }

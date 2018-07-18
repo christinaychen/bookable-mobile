@@ -15,7 +15,14 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ItineraryPage {
 
+  public row: number;
+  public column: number;
+  public venue: number;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.row = this.navParams.get("rowParameter");  //new Product();
+    this.column = this.navParams.get("columnParameter");  //new Product();
+    this.venue = this.navParams.get("venueParameter");  //new Product();
   }
 
   ionViewDidLoad() {

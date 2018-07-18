@@ -4,6 +4,8 @@ import { VenueService } from '../../services/venue.services';
 import { Venue } from '../../models/venue';
 import { Http, Response } from '@angular/http';
 import { CartPage } from '../cart/cart';
+import { ItineraryPage } from '../itinerary/itinerary';
+import { PaymentPage } from '../payment/payment';
 
 
 /**
@@ -26,10 +28,11 @@ export class MapPage {
   public color: string;
   public row: number;
   public column: number;
+  public price: number;
   constructor(public navCtrl: NavController, public navParams: NavParams, 
     private venueService:VenueService, private http: Http, private app: App) {
     this.venueName = this.navParams.get("nameParameter");  
-    this.venueId = 2;
+    this.venueId = 3;
     this.map = [];
     this.map[0] = [];
   }
@@ -45,6 +48,7 @@ export class MapPage {
       }).subscribe(
         result => {
           this.map = result.json();
+          console.log(this.map);
           //result.body(); 
         },
 
@@ -58,8 +62,9 @@ export class MapPage {
     console.log("click!");
     console.log(row);
     console.log(column);
-    this.row = (row*1+1);
-    this.column =  (column*1+1);
+    this.price = this.map[row][column];
+    this.row = (column*1+1);
+    this.column =  (row*1+1);
     if(this.clicked){
       this.buttonColor = '#345465'; //desired Color
       this.clicked = !this.clicked;
@@ -80,12 +85,13 @@ export class MapPage {
       .post("http://localhost:3000/makeOrder/", {
         x: (this.row*1-1),
         y: (this.column*1-1),
-        venueId: 2,
+        venueId: 3,
         purchaseId: 1,
         time: "12:30",
         amount: 5
       }).subscribe(
         result => {
+          
           console.log(result);
         },
 
@@ -93,7 +99,13 @@ export class MapPage {
           console.log(err);
         }
       );
-    this.navCtrl.push(CartPage);
+    console.log(this.price);
+    this.navCtrl.push(PaymentPage, {
+      // rowParameter: this.row,
+      // columnParameter: this.column,
+      venueParameter: 3,
+      priceParameter: this.price
+    });
   }
 
 

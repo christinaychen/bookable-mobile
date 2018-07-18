@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, App } from 'ionic-angular';
 import { VenueService } from '../../services/venue.services';
 import { Venue } from '../../models/venue';
 import { VenuesPage } from '../venues/venues';
+import { Http } from '@angular/http';
 
 /**
  * Generated class for the SearchPage page.
@@ -29,8 +30,11 @@ export class SearchPage {
   findTransport: string;
   locationTFrom: string;
   locationTTo: string;
+  myInput: string;
+  venueNames: Array<String>;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, venueService:VenueService) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, venueService:VenueService,
+    private http: Http, private app: App) {
     // this.venues = venueService.getAllVenues();
     this.findRestaurants = "";
     this.locationR = "";
@@ -39,10 +43,23 @@ export class SearchPage {
     this.findTransport= "";
     this.locationTFrom = "";
     this.locationTTo = "";
-    
+    console.log("running");
+    this.initializeNames();
   }
 
+  async initializeNames(){
+    this.http.get("http://localhost:3000/getVenueNames/" ,{
+    }).subscribe(
+      result => {
+        this.venueNames = result.json();
+        //result.body(); 
+      },
 
+      err => {
+        console.log(err);
+      }
+    );
+  }
   ionViewDidLoad() {
     console.log('ionViewDidLoad SearchPage');
   }
@@ -80,7 +97,19 @@ export class SearchPage {
     console.log(this.locationTTo);
   }
 
+  onInput(ev: any){
+    this.initializeNames();
+    // set val to the value of the searchbar
+    const val = ev.target.value;
+    // if the value is an empty string don't filter the items
+    if (val && val.trim() != '') {
+      console.log("runningTrim");
+      this.venueNames = this.venueNames.filter((name) => {
+        return (name.toLowerCase().indexOf(val.toLowerCase()) > -1);
+      })
+    }
 
+  }
 
 }
 

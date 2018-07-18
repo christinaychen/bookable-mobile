@@ -15,68 +15,74 @@
 
 <ion-content padding>
 
-  Already know what you're looking for? <br>Quick Search Here:
-  <ion-searchbar [(ngModel)]="myInput" [showCancelButton]="shouldShowCancel" (ionInput)="onInput($event)" (ionCancel)="onCancel($event)">
-  </ion-searchbar>
-  <br>
-
-  I'm Looking to Book:
-  <ion-list>
-    <ion-item>
-      <button ion-button (click)="revealR()">Restaurants</button>
-    </ion-item>
-    <ion-list [hidden]="shouldHideR">
-      <ion-item>
-        <ion-label fixed>Find Tables:</ion-label>
-        <ion-input type="text" [(ngModel)]="findRestaurants"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label fixed>Around:</ion-label>
-        <ion-input type="text" [(ngModel)]="locationR"></ion-input>
-      </ion-item>
-      <ion-item>
-        <button ion-button (click)="bookR()">Book!</button>
+  Already know what you're looking for?
+  <br>Quick Search Here:
+  <ion-searchbar (ionInput)="onInput($event)"> 
+    <ion-list>
+      <ion-item *ngFor="let name of venueNames">
+        {{ name }}
       </ion-item>
     </ion-list>
-    <ion-item>
-      <button ion-button (click)="revealM()">Movies</button>
-    </ion-item>
-    <ion-list [hidden]="shouldHideM">
-      <ion-item>
-        <ion-label fixed>Find Seats:</ion-label>
-        <ion-input type="text" [(ngModel)]="findMovies"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label fixed>Around:</ion-label>
-        <ion-input type="text" [(ngModel)]="locationM"></ion-input>
-      </ion-item>
-      <ion-item>
-        <button ion-button (click)="bookM()">Book!</button>
-      </ion-item>
-    </ion-list>
-    <ion-item>
-      <button ion-button (click)="revealT()">Transportation</button>
-    </ion-item>
-    <ion-list [hidden]="shouldHideT">
-        <ion-item>
-          <ion-label fixed>Find Journeys:</ion-label>
-          <ion-input type="text" [(ngModel)]="findTransport"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label fixed>From:</ion-label>
-          <ion-input type="text" [(ngModel)]="locationTFrom"></ion-input>
-        </ion-item>
-        <ion-item>
+   </ion-searchbar> 
+  <br> I'm Looking to Book:
+  <ion-grid>
+    <ion-row>
+      <ion-col col-4>
+        <button ion-button (click)="revealR()">Restaurants</button>
+        <ion-list [hidden]="shouldHideR">
+          <ion-item>
+            <ion-label fixed>Find Tables:</ion-label>
+            <ion-input type="text" [(ngModel)]="findRestaurants"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label fixed>Around:</ion-label>
+            <ion-input type="text" [(ngModel)]="locationR"></ion-input>
+          </ion-item>
+          <ion-item>
+            <button ion-button (click)="bookR()">Book!</button>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+      <ion-col col-4>
+        <button ion-button (click)="revealM()">Movies</button>
+        <ion-list [hidden]="shouldHideM">
+          <ion-item>
+            <ion-label fixed>Find Seats:</ion-label>
+            <ion-input type="text" [(ngModel)]="findMovies"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label fixed>Around:</ion-label>
+            <ion-input type="text" [(ngModel)]="locationM"></ion-input>
+          </ion-item>
+          <ion-item>
+            <button ion-button (click)="bookM()">Book!</button>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+      <ion-col col-4>
+        <button ion-button (click)="revealT()">Transportation</button>
+        <ion-list [hidden]="shouldHideT">
+          <ion-item>
+            <ion-label fixed>Find Journeys:</ion-label>
+            <ion-input type="text" [(ngModel)]="findTransport"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label fixed>From:</ion-label>
+            <ion-input type="text" [(ngModel)]="locationTFrom"></ion-input>
+          </ion-item>
+          <ion-item>
             <ion-label fixed>To:</ion-label>
             <ion-input type="text" [(ngModel)]="locationTTo"></ion-input>
           </ion-item>
-        <ion-item>
-          <button ion-button (click)="bookT()">Book!</button>
-        </ion-item>
-      </ion-list>
-  </ion-list>
+          <ion-item>
+            <button ion-button (click)="bookT()">Book!</button>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
-<!-- 
+  <!-- 
   <ion-list>
     <ion-item *ngFor="let venue of venues">
       {{ venue.name }}
