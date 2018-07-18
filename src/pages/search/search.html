@@ -25,10 +25,10 @@
     </ion-list>
    </ion-searchbar> 
   <br> I'm Looking to Book:
-  <ion-grid>
-    <ion-row>
-      <ion-col col-4>
+  <ion-list>
+<ion-item>
         <button ion-button (click)="revealR()">Restaurants</button>
+</ion-item>
         <ion-list [hidden]="shouldHideR">
           <ion-item>
             <ion-label fixed>Find Tables:</ion-label>
@@ -42,9 +42,9 @@
             <button ion-button (click)="bookR()">Book!</button>
           </ion-item>
         </ion-list>
-      </ion-col>
-      <ion-col col-4>
+      <ion-item>
         <button ion-button (click)="revealM()">Movies</button>
+      </ion-item>
         <ion-list [hidden]="shouldHideM">
           <ion-item>
             <ion-label fixed>Find Seats:</ion-label>
@@ -58,9 +58,10 @@
             <button ion-button (click)="bookM()">Book!</button>
           </ion-item>
         </ion-list>
-      </ion-col>
-      <ion-col col-4>
+<ion-item>
         <button ion-button (click)="revealT()">Transportation</button>
+      </ion-item>
+
         <ion-list [hidden]="shouldHideT">
           <ion-item>
             <ion-label fixed>Find Journeys:</ion-label>
@@ -78,9 +79,8 @@
             <button ion-button (click)="bookT()">Book!</button>
           </ion-item>
         </ion-list>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+
+      </ion-list>
 
   <!-- 
   <ion-list>
