@@ -35,6 +35,7 @@ export class MapPage {
     this.venueId = 3;
     this.map = [];
     this.map[0] = [];
+
   }
 
   ionViewDidLoad() {
@@ -65,15 +66,19 @@ export class MapPage {
     this.price = this.map[row][column];
     this.row = (column*1+1);
     this.column =  (row*1+1);
-    if(this.clicked){
-      this.buttonColor = '#345465'; //desired Color
-      this.clicked = !this.clicked;
-    }
-    else{
-      this.buttonColor = '#CDCDCD';
-      this.clicked = !this.clicked;
-    }
-    this.color = '#CDCDCD';
+    if (this. price== 0 || this.price == -1){
+        this.buttonColor = '#ff0000'; //desired Color
+        this.clicked = !this.clicked;
+      }
+      else{
+        this.buttonColor = '#88BBD6'; //desired Color
+        this.clicked = !this.clicked;
+      }
+    
+
+     // this.clicked = !this.clicked;
+    
+    //this.color = '#CDCDCD';
     /*
     YOUR FUNCTION CODE
     */
@@ -88,7 +93,7 @@ export class MapPage {
         venueId: 3,
         purchaseId: 1,
         time: "12:30",
-        amount: 5
+        amount: this.price
       }).subscribe(
         result => {
           
@@ -101,8 +106,8 @@ export class MapPage {
       );
     console.log(this.price);
     this.navCtrl.push(PaymentPage, {
-      // rowParameter: this.row,
-      // columnParameter: this.column,
+      rowParameter: this.row,
+      columnParameter: this.column,
       venueParameter: 3,
       priceParameter: this.price
     });
