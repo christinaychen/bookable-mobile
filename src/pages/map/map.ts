@@ -28,6 +28,7 @@ export class MapPage {
   public color: string;
   public row: number;
   public column: number;
+  public price: number;
   constructor(public navCtrl: NavController, public navParams: NavParams, 
     private venueService:VenueService, private http: Http, private app: App) {
     this.venueName = this.navParams.get("nameParameter");  
@@ -47,6 +48,7 @@ export class MapPage {
       }).subscribe(
         result => {
           this.map = result.json();
+          console.log(this.map);
           //result.body(); 
         },
 
@@ -60,8 +62,9 @@ export class MapPage {
     console.log("click!");
     console.log(row);
     console.log(column);
-    this.row = (row*1+1);
-    this.column =  (column*1+1);
+    this.price = this.map[row][column];
+    this.row = (column*1+1);
+    this.column =  (row*1+1);
     if(this.clicked){
       this.buttonColor = '#345465'; //desired Color
       this.clicked = !this.clicked;
@@ -88,6 +91,7 @@ export class MapPage {
         amount: 5
       }).subscribe(
         result => {
+          
           console.log(result);
         },
 
@@ -95,11 +99,12 @@ export class MapPage {
           console.log(err);
         }
       );
+    console.log(this.price);
     this.navCtrl.push(PaymentPage, {
       // rowParameter: this.row,
       // columnParameter: this.column,
       venueParameter: 3,
-      priceParameter: this.map[this.row][this.column]
+      priceParameter: this.price
     });
   }
 

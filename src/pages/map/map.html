@@ -19,14 +19,16 @@
   <button ion-button (click)="showMap()">Show Map</button>
   <ion-grid>
     <ion-row>
-   <li *ngFor="let row of map; let j = index" >
-     <ion-col col-4>
-    <li ion-item full outline *ngFor="let column of row ; let i = index" (click)="addEvent(([i]),([j]))" [ngStyle]="{'background-color': buttonColor}">
+   <div *ngFor="let row of map; let i = index" >
+     <ion-col col-3>
+    <button ion-button full outline *ngFor="let column of row; let j = index" (click)="addEvent(([i]),([j]))" [ngStyle]="{'background-color': buttonColor}">
       {{column}}
-    </li>
+    </button>
   </ion-col>
-</li> 
+</div> 
 </ion-row> 
+
+
 
  </ion-grid> 
    <!-- <ion-grid>
