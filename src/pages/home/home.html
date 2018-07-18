@@ -40,7 +40,7 @@
       </script>
     </form> -->
 
-  <h2><div text-align:center><b>Welcome</b>:</div><div> {{name}}</div></h2>
+  <h2><div text-align:center><b>Welcome {{cusname}}!</b></div></h2>
 
 <!-- 
   <div #map id="map"></div> 
@@ -54,6 +54,22 @@
 
   <h2><b>Near you:</b></h2>
   <div>
+      <ion-slides *ngIf="closebusiness && closebusiness.length" autoplay="3000" loop="true" speed="500" pager="false">
+          <ion-slide *ngFor="let business of closebusinesses">>
+            <h1 class="label">
+              <button style="background-color:white"><img src="{{business.img_url}}"></button>
+              <ion-item><b>{{business.name}}</b>
+                <p>{{titles}}</p>
+                <p>{{business.price}} </p>
+              </ion-item>
+              </h1>
+  
+          </ion-slide>
+  </ion-slides>
+  </div>
+
+
+  <!-- <div>
     <ion-slides autoplay="3000" loop="true" speed="500" pager="false">
         <ion-slide>
           <h1 class="label">
@@ -76,7 +92,7 @@
             </h1>
           </ion-slide>
       </ion-slides>
-    </div>
+    </div> -->
 
     <div>
         <h2><b>Popular:</b></h2>

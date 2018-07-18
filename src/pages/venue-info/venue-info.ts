@@ -72,6 +72,8 @@ getDirection() {
 
 
 
+
+
 // calculateDistance() {
 //   const orig = new google.maps.LatLng(this.latitude,this.longitude);
 //   const dest = new google.maps.LatLng(this.latitudeDestination, this.longitudeDestination);

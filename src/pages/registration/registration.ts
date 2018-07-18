@@ -4,6 +4,7 @@ import { RegistrationService } from '../../services/registration.services';
 import { Customer } from '../../models/customers';
 import { TabsPage } from '../tabs/tabs';
 import { Http } from '@angular/http';
+import { LoginPage } from '../login/login';
 
 
 
@@ -57,7 +58,7 @@ export class RegistrationPage {
     catch(err){
       console.log("email already exists");
     }
-    this.navCtrl.push(TabsPage);
+    this.navCtrl.push(LoginPage);
   }
 
 }
