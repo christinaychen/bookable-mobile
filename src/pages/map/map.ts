@@ -4,6 +4,7 @@ import { VenueService } from '../../services/venue.services';
 import { Venue } from '../../models/venue';
 import { Http, Response } from '@angular/http';
 import { CartPage } from '../cart/cart';
+import { ItineraryPage } from '../itinerary/itinerary';
 
 
 /**
@@ -29,7 +30,7 @@ export class MapPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, 
     private venueService:VenueService, private http: Http, private app: App) {
     this.venueName = this.navParams.get("nameParameter");  
-    this.venueId = 2;
+    this.venueId = 3;
     this.map = [];
     this.map[0] = [];
   }
@@ -80,7 +81,7 @@ export class MapPage {
       .post("http://localhost:3000/makeOrder/", {
         x: (this.row*1-1),
         y: (this.column*1-1),
-        venueId: 2,
+        venueId: 3,
         purchaseId: 1,
         time: "12:30",
         amount: 5
@@ -93,7 +94,11 @@ export class MapPage {
           console.log(err);
         }
       );
-    this.navCtrl.push(CartPage);
+    this.navCtrl.push(ItineraryPage, {
+      rowParameter: this.row,
+      columnParameter: this.column,
+      venueParameter: 3
+    });
   }
 
 

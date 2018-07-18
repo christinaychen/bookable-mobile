@@ -20,15 +20,15 @@
   <ion-grid>
     <ion-row>
    <li *ngFor="let row of map; let j = index" >
-     <ion-col col-2>
-    <button ion-item full *ngFor="let column of row ; let i = index" (click)="addEvent(([i]),([j]))" [ngStyle]="{'background-color': buttonColor}">
+     <ion-col col-4>
+    <li ion-item full outline *ngFor="let column of row ; let i = index" (click)="addEvent(([i]),([j]))" [ngStyle]="{'background-color': buttonColor}">
       {{column}}
-    </button>
+    </li>
   </ion-col>
 </li> 
 </ion-row> 
 
-</ion-grid> 
+ </ion-grid> 
    <!-- <ion-grid>
     <ion-row>
       <ion-col col-3>

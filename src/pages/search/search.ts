@@ -29,6 +29,8 @@ export class SearchPage {
   findTransport: string;
   locationTFrom: string;
   locationTTo: string;
+  myInput: string;
+  items: Array<String>;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, venueService:VenueService) {
     // this.venues = venueService.getAllVenues();
@@ -80,7 +82,8 @@ export class SearchPage {
     console.log(this.locationTTo);
   }
 
-
+  onInput(){
+  }
 
 }
 
