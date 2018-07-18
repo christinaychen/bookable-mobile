@@ -36,8 +36,19 @@
     </div>
 
     <h3 style="font-size:15px">Address: <br> {{address}}</h3>
-    <h3 style="font-size:15px">Rating: {{rating}}</h3>
+    <h3 style="font-size:15px">Rating:</h3>
+    <h3 *ngFor="let rating of ratingArray">
+        <ion-icon name="star"></ion-icon>
+    </h3>
+      <h3 *ngFor="let rating of ratingHalfArray">
+          <ion-icon name="star-half"></ion-icon>
+    </h3>
+        <h3 *ngFor="let rating of ratingNone">
+            <ion-icon name="star-outline"></ion-icon>
+        </h3>
+
     <h3 style="font-size:15px">Price: {{price}}</h3>
+
 
 
 
