@@ -5,6 +5,7 @@ import { Venue } from '../../models/venue';
 import { Http, Response } from '@angular/http';
 import { CartPage } from '../cart/cart';
 import { ItineraryPage } from '../itinerary/itinerary';
+import { PaymentPage } from '../payment/payment';
 
 
 /**
@@ -94,10 +95,11 @@ export class MapPage {
           console.log(err);
         }
       );
-    this.navCtrl.push(ItineraryPage, {
-      rowParameter: this.row,
-      columnParameter: this.column,
-      venueParameter: 3
+    this.navCtrl.push(PaymentPage, {
+      // rowParameter: this.row,
+      // columnParameter: this.column,
+      venueParameter: 3,
+      priceParameter: this.map[this.row][this.column]
     });
   }
 

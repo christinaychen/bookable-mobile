@@ -17,13 +17,13 @@
 
   Already know what you're looking for?
   <br>Quick Search Here:
-  <ion-searchbar [(ngModel)]="myInput" [showCancelButton]="shouldShowCancel" (ionInput)="onInput($event)" (ionCancel)="onCancel($event)">
-      <ion-list>
-          <ion-item *ngFor="let item of items">
-            {{ item }}
-          </ion-item>
-        </ion-list>
-  </ion-searchbar>
+  <ion-searchbar (ionInput)="onInput($event)"> 
+    <ion-list>
+      <ion-item *ngFor="let name of venueNames">
+        {{ name }}
+      </ion-item>
+    </ion-list>
+   </ion-searchbar> 
   <br> I'm Looking to Book:
   <ion-grid>
     <ion-row>
@@ -44,7 +44,7 @@
         </ion-list>
       </ion-col>
       <ion-col col-4>
-          <button ion-button (click)="revealM()">Movies</button>
+        <button ion-button (click)="revealM()">Movies</button>
         <ion-list [hidden]="shouldHideM">
           <ion-item>
             <ion-label fixed>Find Seats:</ion-label>
@@ -60,7 +60,7 @@
         </ion-list>
       </ion-col>
       <ion-col col-4>
-          <button ion-button (click)="revealT()">Transportation</button>
+        <button ion-button (click)="revealT()">Transportation</button>
         <ion-list [hidden]="shouldHideT">
           <ion-item>
             <ion-label fixed>Find Journeys:</ion-label>
