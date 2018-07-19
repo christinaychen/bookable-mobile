@@ -30,8 +30,8 @@ export class HomePage {
 
   public venues:Array<Venue>;
   private name: string;
-  public latitude: number = 36.0014;
-  public longitude: number = -78.9382;
+  // public latitude: number = 36.0014;
+  // public longitude: number = -78.9382;
   public radius: number=16093;
   public prox: string;
 
@@ -59,7 +59,7 @@ export class HomePage {
     // this.name = this.navParams.get("nameParameter");
     // console.log(this.navParams.get("nameParameter") + "Hello");
     this.getName();
-    this.prox = this.latitude + "%2C" + this.longitude + "%2C500";
+    this.prox = this.currentLatitude + "%2C" + this.currentLongitude + "%2C500";
     this.getBusinesses;
   }
 
@@ -107,7 +107,7 @@ export class HomePage {
 
   getBusinesses() {
     this.http
-    .get(`http://localhost:3000/businesses?latitude=${this.latitude}&longitude=${this.longitude}&radius=${this.radius}`, {
+    .get(`http://localhost:3000/businesses?latitude=${this.currentLatitude}&longitude=${this.currentLongitude}&radius=${this.radius}`, {
       })
       .subscribe(
         result => {
