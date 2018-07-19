@@ -37,8 +37,14 @@ export class PaymentPage implements AfterViewInit, OnDestroy {
 
   amount: number;
   orderItemId: number;
+  public row: number;
+  public column: number
   
-  constructor(private http:Http, public viewCtrl: ViewController,private cd: ChangeDetectorRef, public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private http:Http, public viewCtrl: ViewController,private cd: ChangeDetectorRef, 
+    public navCtrl: NavController, public navParams: NavParams) {
+      this.row = this.navParams.get("rowParameter");  
+      this.column = this.navParams.get("nameParameter");  
+
   }
 
 
@@ -85,6 +91,23 @@ export class PaymentPage implements AfterViewInit, OnDestroy {
           console.log(result.json());
         }
       ); 
+      this.http
+      .post("http://localhost:3000/makeOrder/", {
+        x: (this.row*1-1),
+        y: (this.column*1-1),
+        venueId: 3,
+        purchaseId: 1,
+        time: "12:30",
+      }).subscribe(
+        result => {
+          
+          console.log(result);
+        },
+
+        err => {
+          console.log(err);
+        }
+      );
     }
   }
 
