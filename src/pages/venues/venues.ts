@@ -4,6 +4,7 @@ import { CartPage } from '../cart/cart';
 import { VenueService } from '../../services/venue.services';
 import { MapPage } from '../map/map';
 import { VenueInfoPage } from '../venue-info/venue-info';
+import { Http, Headers } from '@angular/http';
 
 
 /**
@@ -22,15 +23,24 @@ export class VenuesPage {
   public location: string;
   public venueName: string;
 
+  public businesses;
+  public businessSearch=[];
 
-  constructor(public navCtrl: NavController, 
+  public latitude: number = 36.0014;
+  public longitude: number = -78.9382;
+  public radius: number=16093;
+
+
+  constructor(private http: Http, public navCtrl: NavController, 
               public navParams: NavParams, 
               venueService:VenueService) {
     this.search = this.navParams.get("searchParameter");  
-    this.location = this.navParams.get("locationParameter");  
-    this.venueName = "plsWork";
+    this.location = this.navParams.get("locationParameter"); 
+    this.getBusinesses();
+ 
   }
-
+  ionViewCanEnter() {
+  }
   ionViewDidLoad() {
     console.log('ionViewDidLoad VenuesPage');
   }
@@ -41,10 +51,34 @@ export class VenuesPage {
     });
   }
 
-  goToDetails() {
+  goToDetails(business) {
     this.navCtrl.push(VenueInfoPage, {
-      nameParameter: this.venueName
+      address: business.location.address1 + ", " + business.location.city + ", " + business.location.state + " " + business.location.zip_code,
+      rating: business.rating,
+      price: business.price,
+      categories: business.categories,
+      coordinates: business.coordinates
     })
   }
+
+  getBusinesses() {
+    this.http
+    .get(`http://localhost:3000/businesses?latitude=${this.latitude}&longitude=${this.longitude}&radius=${this.radius}`, {
+      })
+      .subscribe(
+        result => {
+          let tempVar = result.json().body;
+          this.businesses = tempVar.businesses;
+          for (let business of this.businesses) {
+            if (business.name == this.search) {
+              console.log(business.name);
+              this.businessSearch.push(business);
+
+            }
+          }
+
+        }
+      )
+    }
 
 }

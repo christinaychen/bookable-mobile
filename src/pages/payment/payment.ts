@@ -36,9 +36,16 @@ export class PaymentPage implements AfterViewInit, OnDestroy {
   error: string;
 
   amount: number;
-  orderItemId: number;
+  row: number;
+  column: number;
+  venue: number;
   
   constructor(private http:Http, public viewCtrl: ViewController,private cd: ChangeDetectorRef, public navCtrl: NavController, public navParams: NavParams) {
+    this.amount = this.navParams.get("priceParameter");
+    this.column = this.navParams.get("columnParameter");
+    this.row = this.navParams.get("rowParameter");
+    this.venue = this.navParams.get("venueParameter");
+
   }
 
 
@@ -76,9 +83,8 @@ export class PaymentPage implements AfterViewInit, OnDestroy {
       //   productId: stripe.productId,
       // });   
       this.http
-      .post(`http://localhost:3000/charge?jwt=${localStorage.getItem("TOKEN")}`, {
-      stripeToken: stripe.token,
-      orderItemId: stripe.productId
+      .post(`http://localhost:3000/charge?jwt=${localStorage.getItem("TOKEN")}&amount=${this.amount}`, {
+      stripeToken: token,
       })
       .subscribe(
         result => {
