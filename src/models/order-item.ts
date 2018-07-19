@@ -9,6 +9,9 @@ export class OrderItem {
     time: string;
     amount: number;
     token: string;
+    yelpVenueId: string;
+
+    
 
 
 }

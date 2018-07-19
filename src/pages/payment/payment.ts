@@ -40,12 +40,15 @@ export class PaymentPage implements AfterViewInit, OnDestroy {
   row: number;
   column: number;
   venue: number;
+
+  business: any;
   
   constructor(private http:Http, public viewCtrl: ViewController,private cd: ChangeDetectorRef, public navCtrl: NavController, public navParams: NavParams) {
     this.amount = this.navParams.get("priceParameter");
     this.column = this.navParams.get("columnParameter");
     this.row = this.navParams.get("rowParameter");
     this.venue = this.navParams.get("venueParameter");
+    this.business = this.navParams.get("business");
 
   }
 
@@ -92,25 +95,34 @@ export class PaymentPage implements AfterViewInit, OnDestroy {
           console.log(result.json());
         }
       ); 
-      this.http
-      .post("http://localhost:3000/makeOrder/", {
-        x: (this.row*1-1),
-        y: (this.column*1-1),
-        venueId: 3,
-        purchaseId: 1,
-        time: "12:30",
-      }).subscribe(
-        result => {
-          
-          console.log(result);
-          this.navCtrl.push(ItineraryPage);
-        },
 
-        err => {
-          console.log(err);
-        }
-      );
-    }
+      /*this.http
+      .post(`http://localhost:3000/addVenue`, {
+        venue: this.business})
+        .subscribe(
+          result => {
+            console.log(result);
+          }
+        ) */
+        this.http
+        .post("http://localhost:3000/makeOrder/", {
+          x: (this.row*1-1),
+          y: (this.column*1-1),
+          venueId: 3,
+          purchaseId: 1,
+          time: "12:30",
+        }).subscribe(
+          result => {
+            console.log(result);
+          },
+      
+          err => {
+            console.log(err);
+          }
+        );
+        this.navCtrl.push(ItineraryPage);
+
+      }
   }
 
   ngAfterViewInit() {

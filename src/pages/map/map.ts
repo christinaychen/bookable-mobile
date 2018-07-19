@@ -26,9 +26,11 @@ export class MapPage {
   public buttonColor: string;
   public clicked: boolean;
   public color: string;
-  public row: number;
-  public column: number;
-  public price: number;
+  public row: number=0;
+  public column: number=0;
+  public price: number=-1;
+  public business: any;
+
   constructor(public navCtrl: NavController, public navParams: NavParams, 
     private venueService:VenueService, private http: Http, private app: App, 
     public alertCtrl: AlertController) {
@@ -36,6 +38,7 @@ export class MapPage {
     this.venueId = 3;
     this.map = [];
     this.map[0] = [];
+    this.business=this.navParams.get("business");
 
   }
 
@@ -89,12 +92,24 @@ export class MapPage {
   makeReserve(){
 
     console.log(this.price);
-    this.navCtrl.push(PaymentPage, {
-      rowParameter: this.row,
-      columnParameter: this.column,
-      venueParameter: 3,
-      priceParameter: this.price
-    });
+    try{
+      if (this.row!=0 && this.column!=0 && this.price!=-1) {
+        this.navCtrl.push(PaymentPage, {
+          rowParameter: this.row,
+          columnParameter: this.column,
+          venueParameter: 3,
+          priceParameter: this.price,
+          business: this.business
+        });
+      }
+      
+    }
+
+    catch {
+      console.log("Valid reservation not selected")
+      
+    }
+
   }
 
 

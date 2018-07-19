@@ -15,9 +15,9 @@
 
 <ion-content padding>
       <ion-list>
-        <h1 class="label" *ngFor="let orderItem of orderItemsArray">
-          <button style="background-color:white"> <img src="{{business.image_url}}"></button>
-          <ion-item><b>{{business.name}}</b><p>{{business.rating}} {{business.price}}</p></ion-item>
+        <h1 class="label" *ngFor="let bookedItem of bookedItemArray">
+          <button style="background-color:white"> <img src="{{bookedItem.image_url}}"></button>
+          <ion-item><b>{{bookedItem.name}}</b><p>Seat: Row-{{bookedItem.x}} Column-{{bookedItem.y}}</p></ion-item>
         </h1>
 
       </ion-list>
