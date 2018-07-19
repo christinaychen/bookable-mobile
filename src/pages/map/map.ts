@@ -29,12 +29,15 @@ export class MapPage {
   public row: number=0;
   public column: number=0;
   public price: number=-1;
+  public business: any;
+
   constructor(public navCtrl: NavController, public navParams: NavParams, 
     private venueService:VenueService, private http: Http, private app: App) {
     this.venueName = this.navParams.get("nameParameter");  
     this.venueId = 3;
     this.map = [];
     this.map[0] = [];
+    this.business=this.navParams.get("business");
 
   }
 
@@ -110,7 +113,8 @@ export class MapPage {
           rowParameter: this.row,
           columnParameter: this.column,
           venueParameter: 3,
-          priceParameter: this.price
+          priceParameter: this.price,
+          business: this.business
         });
       }
       

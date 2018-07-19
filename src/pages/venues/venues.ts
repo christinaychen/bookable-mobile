@@ -57,7 +57,8 @@ export class VenuesPage {
       rating: business.rating,
       price: business.price,
       categories: business.categories,
-      coordinates: business.coordinates
+      coordinates: business.coordinates,
+      business: business,
     })
   }
 

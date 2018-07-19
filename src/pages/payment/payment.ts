@@ -39,12 +39,15 @@ export class PaymentPage implements AfterViewInit, OnDestroy {
   row: number;
   column: number;
   venue: number;
+
+  business: any;
   
   constructor(private http:Http, public viewCtrl: ViewController,private cd: ChangeDetectorRef, public navCtrl: NavController, public navParams: NavParams) {
     this.amount = this.navParams.get("priceParameter");
     this.column = this.navParams.get("columnParameter");
     this.row = this.navParams.get("rowParameter");
     this.venue = this.navParams.get("venueParameter");
+    this.business = this.navParams.get("business");
 
   }
 
@@ -91,7 +94,17 @@ export class PaymentPage implements AfterViewInit, OnDestroy {
           console.log(result.json());
         }
       ); 
-    }
+
+      this.http
+      .post(`http://localhost:3000/addVenue`, {
+        venue: this.business})
+        .subscribe(
+          result => {
+            console.log(result);
+          }
+        )
+
+      }
   }
 
   ngAfterViewInit() {

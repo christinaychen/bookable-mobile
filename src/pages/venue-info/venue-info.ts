@@ -45,6 +45,7 @@ export class VenueInfoPage implements OnInit{
   public ratingArray: number[]=[];
   public ratingHalfArray: number[]=[];
   public ratingNone: number[] = [];
+  public business: any;
 
 
   @ViewChild("search")
@@ -64,10 +65,11 @@ export class VenueInfoPage implements OnInit{
     if (this.rating!=Math.trunc(this.rating)) {
       this.ratingHalfArray.push(1)
     }
-    
+
     for (let i = 0; i<5-this.rating; i++) {
       this.ratingNone.push(1);
     }
+    this.business = this.navParams.get("business");
 
 
     this.price = this.navParams.get("price");
@@ -77,7 +79,10 @@ export class VenueInfoPage implements OnInit{
   }
 
   goToMap() {
-    this.navCtrl.push(MapPage);
+    this.navCtrl.push(MapPage,
+    {
+      business: this.business,
+    });
   }
 
 

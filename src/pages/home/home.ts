@@ -10,16 +10,7 @@ import { PaymentPage } from '../payment/payment';
 import { VenueInfoPage } from '../venue-info/venue-info'
 import { Geolocation ,GeolocationOptions ,Geoposition } from '@ionic-native/geolocation'; 
 import { Http, Headers } from '@angular/http';
-import { Business } from '../../models/business';
 
-
-
-/**
- * Generated class for the HomePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 
@@ -51,7 +42,7 @@ export class HomePage {
   public zoom: number;
 
   public businesses;
-  public closebusinesses: Business[]=[];
+  public closebusinesses=[];
 
   public titles=[];
 
@@ -78,8 +69,8 @@ export class HomePage {
       rating: business.rating,
       price: business.price,
       categories: business.categories,
-      coordinates: business.coordinates
-      
+      coordinates: business.coordinates,
+      business: business
     })
 
   }
