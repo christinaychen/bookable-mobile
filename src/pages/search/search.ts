@@ -44,22 +44,22 @@ export class SearchPage {
     this.locationTFrom = "";
     this.locationTTo = "";
     console.log("running");
-    this.initializeNames();
+    // this.initializeNames();
   }
 
-  async initializeNames(){
-    this.http.get("http://localhost:3000/getVenueNames/" ,{
-    }).subscribe(
-      result => {
-        this.venueNames = result.json();
-        //result.body(); 
-      },
+  // async initializeNames(){
+  //   this.http.get("http://localhost:3000/getVenueNames/" ,{
+  //   }).subscribe(
+  //     result => {
+  //       this.venueNames = result.json();
+  //       //result.body(); 
+  //     },
 
-      err => {
-        console.log(err);
-      }
-    );
-  }
+  //     err => {
+  //       console.log(err);
+  //     }
+  //   );
+  // }
   ionViewDidLoad() {
     console.log('ionViewDidLoad SearchPage');
   }
@@ -97,19 +97,19 @@ export class SearchPage {
     console.log(this.locationTTo);
   }
 
-  onInput(ev: any){
-    this.initializeNames();
-    // set val to the value of the searchbar
-    const val = ev.target.value;
-    // if the value is an empty string don't filter the items
-    if (val && val.trim() != '') {
-      console.log("runningTrim");
-      this.venueNames = this.venueNames.filter((name) => {
-        return (name.toLowerCase().indexOf(val.toLowerCase()) > -1);
-      })
-    }
+  // onInput(ev: any){
+  //   this.initializeNames();
+  //   // set val to the value of the searchbar
+  //   const val = ev.target.value;
+  //   // if the value is an empty string don't filter the items
+  //   if (val && val.trim() != '') {
+  //     console.log("runningTrim");
+  //     this.venueNames = this.venueNames.filter((name) => {
+  //       return (name.toLowerCase().indexOf(val.toLowerCase()) > -1);
+  //     })
+  //   }
 
-  }
+  // }
 
 }
 

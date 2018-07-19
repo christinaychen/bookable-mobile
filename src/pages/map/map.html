@@ -8,8 +8,8 @@
 
   <ion-navbar color="primary">
     <!-- <ion-title align = "center" style="font-family:'Courier New', Courier, monospace" > -->
-    <ion-title align="center" style="font-family:'Courier New', Courier, monospace">
-      <b>{{venueName}}</b>
+    <ion-title style="font-family:'Courier New', Courier, monospace">
+      <b>Venue Map</b>
     </ion-title>
   </ion-navbar>
 
@@ -29,14 +29,12 @@
 
 
 </ion-row> 
-<h3>You have selected</h3>
-<br>
-<h2> Row: {{row}} </h2>
-<br>
-<h2>Column: {{column}} </h2>
+<h2 style="font-size:18px; margin:3px">You have selected</h2>
+<h2 style="font-size:18px; margin:3px"> Row: {{row}}    <br>  Column: {{column}} </h2>
+
 <br>
 <button ion-button (click)="makeReserve()"> 
- Book</button>
+ Book Reservation</button>
 
 
  </ion-grid> 

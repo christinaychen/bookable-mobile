@@ -56,12 +56,15 @@ export class VenueInfoPage implements OnInit{
   ) {
     this.address = this.navParams.get("address");
     this.rating = this.navParams.get("rating");
+
     for (let i =0; i<this.rating; i++) {
       this.ratingArray.push(1);
     }
+
     if (this.rating!=Math.trunc(this.rating)) {
       this.ratingHalfArray.push(1)
     }
+    
     for (let i = 0; i<5-this.rating; i++) {
       this.ratingNone.push(1);
     }
@@ -72,6 +75,8 @@ export class VenueInfoPage implements OnInit{
     this.latitudeDestination = this.navParams.get("coordinates").latitude;
     this.longitudeDestination = this.navParams.get("coordinates").longitude;
   }
+
+
 
 
   ionViewDidLoad() {

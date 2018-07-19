@@ -87,24 +87,7 @@ export class MapPage {
   }
 
   makeReserve(){
-    this.http
-      .post("http://localhost:3000/makeOrder/", {
-        x: (this.row*1-1),
-        y: (this.column*1-1),
-        venueId: 3,
-        purchaseId: 1,
-        time: "12:30",
-        amount: this.price
-      }).subscribe(
-        result => {
-          
-          console.log(result);
-        },
 
-        err => {
-          console.log(err);
-        }
-      );
     console.log(this.price);
     this.navCtrl.push(PaymentPage, {
       rowParameter: this.row,

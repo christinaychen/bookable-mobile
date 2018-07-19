@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar color="primary">
-      <ion-title>Payment</ion-title>
+      <ion-title style = "font-family: 'Courier New', Courier, monospace"><b>Payment</b></ion-title>
       <!-- <button ion-button class = "closebutton" (click)="closeModal()">Close</button> -->
   </ion-navbar>
 
@@ -23,7 +23,7 @@
           <div id="card-errors" role="alert" *ngIf="error">{{ error }}</div>
         </div>
       
-        <button type="submit">Pay {{this.amount}}</button>
+        <button type="submit"><b>Pay ${{this.amount}}</b></button>
       </form>
   <!-- <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
   <script type="text/javascript">

@@ -10,6 +10,7 @@ import { NgForm } from '@angular/forms';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ViewController } from 'ionic-angular';
 import { Http } from '@angular/http';
+import { ItineraryPage } from '../itinerary/itinerary';
 
 declare var stripe: any;
 declare var elements: any;
@@ -36,14 +37,15 @@ export class PaymentPage implements AfterViewInit, OnDestroy {
   error: string;
 
   amount: number;
-  orderItemId: number;
-  public row: number;
-  public column: number
+  row: number;
+  column: number;
+  venue: number;
   
-  constructor(private http:Http, public viewCtrl: ViewController,private cd: ChangeDetectorRef, 
-    public navCtrl: NavController, public navParams: NavParams) {
-      this.row = this.navParams.get("rowParameter");  
-      this.column = this.navParams.get("nameParameter");  
+  constructor(private http:Http, public viewCtrl: ViewController,private cd: ChangeDetectorRef, public navCtrl: NavController, public navParams: NavParams) {
+    this.amount = this.navParams.get("priceParameter");
+    this.column = this.navParams.get("columnParameter");
+    this.row = this.navParams.get("rowParameter");
+    this.venue = this.navParams.get("venueParameter");
 
   }
 
@@ -82,9 +84,8 @@ export class PaymentPage implements AfterViewInit, OnDestroy {
       //   productId: stripe.productId,
       // });   
       this.http
-      .post(`http://localhost:3000/charge?jwt=${localStorage.getItem("TOKEN")}`, {
-      stripeToken: stripe.token,
-      orderItemId: stripe.productId
+      .post(`http://localhost:3000/charge?jwt=${localStorage.getItem("TOKEN")}&amount=${this.amount}`, {
+      stripeToken: token,
       })
       .subscribe(
         result => {
@@ -102,6 +103,7 @@ export class PaymentPage implements AfterViewInit, OnDestroy {
         result => {
           
           console.log(result);
+          this.navCtrl.push(ItineraryPage);
         },
 
         err => {

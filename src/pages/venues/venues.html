@@ -8,7 +8,7 @@
 
   <ion-navbar color="primary">
     <!-- <ion-title align = "center" style="font-family:'Courier New', Courier, monospace" > -->
-    <ion-title align="center" style="font-family:'Courier New', Courier, monospace">
+    <ion-title style="font-family:'Courier New', Courier, monospace">
       <b>Venues</b>
     </ion-title>
   </ion-navbar>
@@ -17,24 +17,33 @@
 
 
 <ion-content padding>
-  You're looking for {{this.search}} around {{this.location}}
-  <ion-grid>
-    <ion-row >
-      <ion-col>
-        <ion-card>
-          <img src="../../assets/imgs/searestaurant.jpg"/>
+  <b>You're looking for {{this.search}} around {{this.location}}</b>
+  <ion-list>
+ 
+        <ion-card *ngFor="let business of businessSearch">
+          <img src="{{business.image_url}}"/>
           <ion-card-content>
             <div class="center"><ion-card-title>
-              Sea Restaurant
+              {{business.name}}
               </ion-card-title>
-            <p>
-              The most popular industrial group ever, and largely
-              responsible for bringing the music to a mass audience.
-            </p> </div>
+          </div>
           </ion-card-content>
-          <div class="center"><button ion-button (click)=goToDetails()>See Details</button></div>
-          <div class="center"><button ion-button (click)="goToMap()">Make Reservations</button></div>        </ion-card>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+          <div class="center"><button ion-button (click)=goToDetails(business)>See Details</button>
+          <button ion-button (click)="goToMap()">Make Reservations</button></div>        </ion-card>
+  </ion-list>
+
+  <!-- <div>
+    <ion-list>
+      <h1 class="label" *ngFor="let business of businessSearch">
+        <button style="background-color:white" (click)="goToVenueInfo(business)"> <img src="{{business.image_url}}"></button>
+        <ion-item><b>{{business.name}}</b><p>{{business.rating}} {{business.price}}</p> <div class="center">
+          <button ion-button (click)=goToDetails(business)>See Details</button></div>
+          <div class="center"><button ion-button (click)="goToMap()">Make Reservations</button></div></ion-item>
+      </h1>
+
+    </ion-list>
+
+
+
+  </div> -->
 </ion-content>

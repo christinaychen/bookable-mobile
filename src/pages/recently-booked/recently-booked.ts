@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Http } from '@angular/http';
 
 /**
  * Generated class for the RecentlyBookedPage page.
@@ -14,12 +15,40 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'recently-booked.html',
 })
 export class RecentlyBookedPage {
+  public userId: number;
+  public orderItemsArray: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private http: Http, public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad RecentlyBookedPage');
+  }
+
+  getId() {
+    this.http
+    .get(`http://localhost:3000/customer?jwt=${localStorage.getItem("TOKEN")}`)
+    .subscribe(
+      result => {
+        this.userId = result.json().userId;
+      }
+    );
+  }
+
+  getVenue() {
+
+  }
+
+  getOrders(){
+    this.http
+    .get(`http://localhost:3000/orderItems/?userId=${this.userId}`)
+    .subscribe(
+      result => {
+        this.orderItemsArray = result.json();
+
+
+      }
+    );
   }
 
 }

@@ -57,6 +57,8 @@ export class HomePage {
 
   public cusname: string;
 
+
+
   
 
 
@@ -77,6 +79,7 @@ export class HomePage {
       price: business.price,
       categories: business.categories,
       coordinates: business.coordinates
+      
     })
 
   }
@@ -121,6 +124,8 @@ export class HomePage {
           console.log(tempVar);
           this.businesses = tempVar.businesses;
 
+          
+
           for (let business of this.businesses) {
 
             let businesslat = business.coordinates.latitude;
@@ -129,31 +134,17 @@ export class HomePage {
             let long = parseFloat(businesslong) - this.currentLongitude;
 
             let distance = Math.pow(lat, 2) + Math.pow(long,2);
-            console.log(distance);
 
             if (distance<=Math.pow(16093,2)) {
-              // let bus = new Business();
-              // bus.name = business.name;
-              // bus.price = business.price;
-              // bus.rating = business.rating;
-              // bus.image_url = business.image_url;
-              // // bus.location = business.location;
-              // bus.id = business.id;
-              // // bus.coordinates = business.coordinates;
-              // // bus.categories = business.categories;
               this.closebusinesses.push(business);
             }
           }
-          console.log(this.closebusinesses);
-
 
           for (let business of this.closebusinesses) {
             for (let item of business.categories) {
               this.titles.push(item.title);
             }
           }
-
-
         },
         err => {
           console.log(err);
@@ -238,7 +229,6 @@ export class HomePage {
     };
 
     this.geolocation.getCurrentPosition(this.options).then((pos : Geoposition) => {
-
         this.currentPos = pos;      
         this.currentLatitude=pos.coords.latitude;
         this.currentLongitude=pos.coords.longitude;
