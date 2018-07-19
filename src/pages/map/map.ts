@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, App, TabHighlight } from 'ionic-angular';
+import { NavController, NavParams, App, TabHighlight, AlertController } from 'ionic-angular';
 import { VenueService } from '../../services/venue.services';
 import { Venue } from '../../models/venue';
 import { Http, Response } from '@angular/http';
@@ -30,7 +30,8 @@ export class MapPage {
   public column: number;
   public price: number;
   constructor(public navCtrl: NavController, public navParams: NavParams, 
-    private venueService:VenueService, private http: Http, private app: App) {
+    private venueService:VenueService, private http: Http, private app: App, 
+    public alertCtrl: AlertController) {
     this.venueName = this.navParams.get("nameParameter");  
     this.venueId = 3;
     this.map = [];
@@ -71,7 +72,7 @@ export class MapPage {
         this.clicked = !this.clicked;
       }
       else{
-        this.buttonColor = '#88BBD6'; //desired Color
+        this.buttonColor = 'white'; //desired Color
         this.clicked = !this.clicked;
       }
     

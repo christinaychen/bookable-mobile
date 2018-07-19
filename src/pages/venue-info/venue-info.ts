@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { FormControl } from '@angular/forms';
 import { MapsAPILoader } from '@agm/core';
 import { ElementRef, NgZone, OnInit, ViewChild } from '@angular/core';
+import { MapPage } from '../map/map';
 
 
 /**
@@ -83,6 +84,9 @@ getDirection() {
   });
 }
 
+goToMap(){
+  this.navCtrl.push(MapPage);
+}
 
 
 

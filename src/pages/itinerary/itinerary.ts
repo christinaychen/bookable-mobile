@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Http, Headers } from '@angular/http';
-import { orderItem } from '../../models/venue';
+import { OrderItem } from '../../models/order-item';
 
 /**
  * Generated class for the ItineraryPage page.
@@ -21,7 +21,7 @@ export class ItineraryPage {
   public column: number;
   public venue: number;
   public userId: number;
-  public orderItems: orderItems[]
+  public orderItems: OrderItem[]
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private http: Http) {
     this.row = this.navParams.get("rowParameter");  //new Product();
